@@ -1,0 +1,49 @@
+c:\users\petyapc\documents\visual studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Bevallas_Excel_Kezelo.exe.config
+c:\users\petyapc\documents\visual studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Bevallas_Excel_Kezelo.exe
+c:\users\petyapc\documents\visual studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Bevallas_Excel_Kezelo.pdb
+c:\users\petyapc\documents\visual studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.csprojResolveAssemblyReference.cache
+c:\users\petyapc\documents\visual studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.Properties.Resources.resources
+c:\users\petyapc\documents\visual studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.csproj.GenerateResource.Cache
+c:\users\petyapc\documents\visual studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.exe
+c:\users\petyapc\documents\visual studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.pdb
+c:\users\petyapc\documents\visual studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.kezeloAblak.resources
+C:\Users\PetyaPC\Documents\Visual Studio 2015\Projects\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.csproj.ResolveComReference.cache
+E:\prog data\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Bevallas_Excel_Kezelo.exe.config
+E:\prog data\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.csproj.ResolveComReference.cache
+E:\prog data\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.exe
+E:\prog data\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.pdb
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.csprojAssemblyReference.cache
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.csproj.ResolveComReference.cache
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.kezeloAblak.resources
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.Properties.Resources.resources
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.csproj.GenerateResource.cache
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.csproj.CoreCompileInputs.cache
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.NevjegyPanel.resources
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\XKR Olvasó.exe.config
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\XKR Olvasó.exe
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\XKR Olvasó.pdb
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\XKR Olvasó.exe
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\XKR Olvasó.pdb
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.hitelesitoAblak.resources
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\BouncyCastle.Crypto.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Google.Protobuf.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\K4os.Compression.LZ4.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\K4os.Hash.xxHash.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\MySql.Data.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Renci.SshNet.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\System.Buffers.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\System.Memory.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Ubiety.Dns.Core.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Zstandard.Net.dll
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Google.Protobuf.xml
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\K4os.Compression.LZ4.xml
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\K4os.Hash.xxHash.xml
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\MySql.Data.xml
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\Renci.SshNet.xml
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\System.Buffers.xml
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\System.Memory.xml
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\REPOS\NO GIT\C#\Bevallas_Excel_Kezelo\Bevallas_Excel_Kezelo\obj\Debug\Bevallas_Excel_Kezelo.csproj.CopyComplete

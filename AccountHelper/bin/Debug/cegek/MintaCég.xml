@@ -1,0 +1,19 @@
+﻿<ceg nev="MintaCég">
+  <szamlazasi>
+    <szamlazasiNev>SzámlaNév</szamlazasiNev>
+    <varos>Város</varos>
+    <cim>Puskin utca, 1.</cim>
+    <iranyitoszam>1444</iranyitoszam>
+  </szamlazasi>
+  <levelezesi>
+    <levelezesi_varos>Levélváros</levelezesi_varos>
+    <levelezesi_cim>Levél utca, 55.</levelezesi_cim>
+    <levelezesi_iranyitoszam>4444</levelezesi_iranyitoszam>
+  </levelezesi>
+  <cegadatok>
+    <cegjegyzekszam>1673723454</cegjegyzekszam>
+    <cegAdoszam>15666-456-23</cegAdoszam>
+    <cegTelefonszam>06707719804</cegTelefonszam>
+    <cegWeboldal>www.web.com</cegWeboldal>
+  </cegadatok>
+</ceg>
