@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartupForm));
             this.FelsoSav = new System.Windows.Forms.MenuStrip();
             this.nyilvántartásToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XKROlvasóToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,6 +133,7 @@
             this.Controls.Add(this.Splash);
             this.Controls.Add(this.FelsoSav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.FelsoSav;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

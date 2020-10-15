@@ -1,0 +1,19 @@
+<ceg nev="Platformers Bár">
+  <szamlazasi>
+    <szamlazasiNev>Platformers Bár</szamlazasiNev>
+    <varos>Dorog</varos>
+    <cim>Árpád utca, 51.</cim>
+    <iranyitoszam>2510</iranyitoszam>
+  </szamlazasi>
+  <levelezesi>
+    <levelezesi_varos>Budapest</levelezesi_varos>
+    <levelezesi_cim>Vörösmarty Mihály utca, 61.</levelezesi_cim>
+    <levelezesi_iranyitoszam>2400</levelezesi_iranyitoszam>
+  </levelezesi>
+  <cegadatok>
+    <cegjegyzekszam>1122333333</cegjegyzekszam>
+    <cegAdoszam>11223344566</cegAdoszam>
+    <cegTelefonszam>+36707719804</cegTelefonszam>
+    <cegWeboldal>www.platformers.hu</cegWeboldal>
+  </cegadatok>
+</ceg>

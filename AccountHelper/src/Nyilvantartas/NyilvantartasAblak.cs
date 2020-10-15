@@ -13,9 +13,12 @@ namespace AccountHelper.src.Nyilvantartas
 {
     public partial class NyilvantartasAblak : Form
     {
+        public static NyilvantartasAblak formInstance;
+
         public NyilvantartasAblak()
         {
             InitializeComponent();
+            formInstance = this;
         }
 
         private string ReverseSlash(string input)
@@ -30,16 +33,19 @@ namespace AccountHelper.src.Nyilvantartas
 
         public void Frissites()
         {
+            tartalomDoboz.Text = "";
             cegLista.Items.Clear();
             Ceg.Betoltes();
             ListViewItem item;
+
             foreach (Ceg c in Ceg.lista)
             {
                 item = new ListViewItem(c.ceg_neve)
                 {
                     UseItemStyleForSubItems = false,
+                    Tag = ReverseSlash(c.path)
                 };
-                item.SubItems.Add(ReverseSlash(c.path));
+                item.SubItems.Add(c.fajlNev);
 
                 cegLista.Items.Add(item);
             }
@@ -47,7 +53,7 @@ namespace AccountHelper.src.Nyilvantartas
 
         private void NyilvantartasAblak_Load(object sender, EventArgs e)
         {
-            FrissitesGomb_Click(null, e);
+            Frissites();
         }
 
         private void TorlesGomb_Click(object sender, EventArgs e)
@@ -56,7 +62,7 @@ namespace AccountHelper.src.Nyilvantartas
 
             foreach (ListViewItem item in cegLista.SelectedItems)
             {
-                File.Delete(item.SubItems[1].Text);
+                File.Delete(item.Tag.ToString());
                 item.Remove();
             }
             Frissites();
@@ -80,9 +86,17 @@ namespace AccountHelper.src.Nyilvantartas
             SzerkesztesAblak.code = true;
             foreach (ListViewItem item in cegLista.SelectedItems)
             {
-                SzerkesztesAblak.szerkesztett = item.SubItems[1].Text;
+                SzerkesztesAblak.szerkesztett = item.Tag.ToString();
             }
             Program.SzerkesztesAblak.ShowDialog();
+        }
+
+        private void CegLista_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (cegLista.FocusedItem.Bounds.Contains(e.Location))
+            {
+                tartalomDoboz.Text = File.ReadAllText(cegLista.FocusedItem.Tag.ToString());
+            }
         }
     }
 }

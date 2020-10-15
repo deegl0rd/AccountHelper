@@ -1,74 +1,38 @@
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\BookerHelper.exe.config
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\BookerHelper.exe
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\BookerHelper.pdb
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\BouncyCastle.Crypto.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\Google.Protobuf.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\K4os.Compression.LZ4.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\K4os.Compression.LZ4.Streams.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\K4os.Hash.xxHash.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\MySql.Data.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\Renci.SshNet.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\System.Buffers.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\System.Memory.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\Ubiety.Dns.Core.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\Zstandard.Net.dll
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\Google.Protobuf.xml
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\K4os.Compression.LZ4.xml
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\K4os.Compression.LZ4.Streams.xml
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\K4os.Hash.xxHash.xml
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\MySql.Data.xml
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\Renci.SshNet.xml
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\System.Buffers.xml
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\System.Memory.xml
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\AccountHelper.csprojAssemblyReference.cache
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\AccountHelper.csproj.ResolveComReference.cache
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\BookerHelper.src.HitelesitoAblak.resources
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\BookerHelper.src.StartupForm.resources
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\BookerHelper.src.XKROlvaso.KezeloAblak.resources
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\BookerHelper.src.NevjegyPanel.resources
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\BookerHelper.Properties.Resources.resources
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\AccountHelper.csproj.GenerateResource.cache
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\AccountHelper.csproj.CoreCompileInputs.cache
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\AccountHelper.csproj.CopyComplete
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\BookerHelper.exe
-E:\REPOS\NO GIT\C#\BookerHelper\BookerHelper\obj\Debug\BookerHelper.pdb
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csprojAssemblyReference.cache
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.ResolveComReference.cache
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.HitelesitoAblak.resources
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.StartupForm.resources
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.XKROlvaso.KezeloAblak.resources
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.NevjegyPanel.resources
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.GenerateResource.cache
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.CoreCompileInputs.cache
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.Properties.Resources.resources
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\AccountHelper.exe.config
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\AccountHelper.exe
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\AccountHelper.pdb
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\BouncyCastle.Crypto.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\Google.Protobuf.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.Streams.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\K4os.Hash.xxHash.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\MySql.Data.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\Renci.SshNet.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\System.Buffers.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\System.Memory.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\Ubiety.Dns.Core.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\Zstandard.Net.dll
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\Google.Protobuf.xml
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.xml
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.Streams.xml
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\K4os.Hash.xxHash.xml
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\MySql.Data.xml
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\Renci.SshNet.xml
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\System.Buffers.xml
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\System.Memory.xml
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.CopyComplete
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.exe
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.pdb
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.NyilvantartasAblak.resources
-E:\REPOS\NO GIT\C#\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.SzerkesztesAblak.resources
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\AccountHelper.exe.config
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\AccountHelper.exe
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\AccountHelper.pdb
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\BouncyCastle.Crypto.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Google.Protobuf.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\K4os.Hash.xxHash.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\MySql.Data.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Renci.SshNet.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Buffers.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Memory.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Ubiety.Dns.Core.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Zstandard.Net.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Google.Protobuf.xml
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.xml
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\K4os.Hash.xxHash.xml
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\MySql.Data.xml
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Renci.SshNet.xml
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Buffers.xml
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Memory.xml
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.ResolveComReference.cache
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.HitelesitoAblak.resources
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.NyilvantartasAblak.resources
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.SzerkesztesAblak.resources
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.StartupForm.resources
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.XKROlvaso.KezeloAblak.resources
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.NevjegyPanel.resources
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.Properties.Resources.resources
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.GenerateResource.cache
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.CoreCompileInputs.cache
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.CopyComplete
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.exe
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.pdb
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csprojAssemblyReference.cache

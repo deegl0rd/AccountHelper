@@ -28,6 +28,8 @@ namespace AccountHelper.src.Nyilvantartas
 
         public readonly string path;
 
+        public readonly string fajlNev;
+
         #endregion
 
         /// <summary>
@@ -93,6 +95,7 @@ namespace AccountHelper.src.Nyilvantartas
         public Ceg(string hely, string fajlNev)
         {
             path = hely + "/" + fajlNev;
+            this.fajlNev = fajlNev;
             string xmlContent = File.ReadAllText(hely + "/" + fajlNev);
             xml = new XmlDocument();
             xml.LoadXml(xmlContent);
@@ -240,6 +243,44 @@ namespace AccountHelper.src.Nyilvantartas
             writer.Flush();
 
             Console.WriteLine("file created");
+        }
+
+        #endregion
+
+        #region Változtatás metódus
+
+        public void Valtoztat(string ceg_neve,
+            string szamlazasiNev,
+            string varos,
+            int iranyitoszam,
+            string cim,
+            string levelezesi_varos,
+            string levelezesi_cim,
+            int levelezesi_iranyitoszam,
+            string cegjegyzekszam,
+            string cegAdoszam,
+            string cegTelefonszam,
+            string cegWeboldal)
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(File.ReadAllText(path));
+
+            xml.GetElementsByTagName("ceg")[0].Attributes[0].InnerText = ceg_neve;
+            xml.GetElementsByTagName("szamlazasiNev")[0].InnerText = szamlazasiNev;
+            xml.GetElementsByTagName("varos")[0].InnerText = varos;
+            xml.GetElementsByTagName("iranyitoszam")[0].InnerText = iranyitoszam.ToString();
+            xml.GetElementsByTagName("cim")[0].InnerText = cim;
+            xml.GetElementsByTagName("levelezesi_varos")[0].InnerText = levelezesi_varos;
+            xml.GetElementsByTagName("levelezesi_cim")[0].InnerText = levelezesi_cim;
+            xml.GetElementsByTagName("levelezesi_iranyitoszam")[0].InnerText = levelezesi_iranyitoszam.ToString();
+            xml.GetElementsByTagName("cegjegyzekszam")[0].InnerText = cegjegyzekszam;
+            xml.GetElementsByTagName("cegAdoszam")[0].InnerText = cegAdoszam;
+            xml.GetElementsByTagName("cegTelefonszam")[0].InnerText = cegTelefonszam;
+            xml.GetElementsByTagName("cegWeboldal")[0].InnerText = cegWeboldal;
+
+            xml.Save(path);
+
+            Console.WriteLine("file modified and saved");
         }
 
         #endregion

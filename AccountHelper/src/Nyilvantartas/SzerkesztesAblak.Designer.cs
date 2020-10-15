@@ -1,4 +1,7 @@
-﻿namespace AccountHelper.src.Nyilvantartas
+﻿using System;
+using System.Windows.Forms;
+
+namespace AccountHelper.src.Nyilvantartas
 {
     partial class SzerkesztesAblak
     {
@@ -20,6 +23,17 @@
             base.Dispose(disposing);
         }
 
+        private void haNemSzam(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            } else
+            {
+                e.Handled = false;
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,6 +42,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SzerkesztesAblak));
             this.MegseGomb = new System.Windows.Forms.Button();
             this.mentesGomb = new System.Windows.Forms.Button();
             this.vonal5 = new System.Windows.Forms.Label();
@@ -111,58 +126,74 @@
             // cegTelefonszam_doboz2
             // 
             this.cegTelefonszam_doboz2.Location = new System.Drawing.Point(346, 587);
+            this.cegTelefonszam_doboz2.MaxLength = 7;
             this.cegTelefonszam_doboz2.Name = "cegTelefonszam_doboz2";
             this.cegTelefonszam_doboz2.Size = new System.Drawing.Size(87, 20);
             this.cegTelefonszam_doboz2.TabIndex = 65;
+            this.cegTelefonszam_doboz2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // cegTelefonszam_doboz1
             // 
             this.cegTelefonszam_doboz1.Location = new System.Drawing.Point(265, 585);
+            this.cegTelefonszam_doboz1.MaxLength = 2;
             this.cegTelefonszam_doboz1.Name = "cegTelefonszam_doboz1";
             this.cegTelefonszam_doboz1.Size = new System.Drawing.Size(43, 20);
             this.cegTelefonszam_doboz1.TabIndex = 64;
+            this.cegTelefonszam_doboz1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // cegAdoszam_doboz3
             // 
             this.cegAdoszam_doboz3.Location = new System.Drawing.Point(411, 542);
+            this.cegAdoszam_doboz3.MaxLength = 2;
             this.cegAdoszam_doboz3.Name = "cegAdoszam_doboz3";
             this.cegAdoszam_doboz3.Size = new System.Drawing.Size(42, 20);
             this.cegAdoszam_doboz3.TabIndex = 60;
+            this.cegAdoszam_doboz3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // cegAdoszam_doboz2
             // 
             this.cegAdoszam_doboz2.Location = new System.Drawing.Point(346, 542);
+            this.cegAdoszam_doboz2.MaxLength = 1;
             this.cegAdoszam_doboz2.Name = "cegAdoszam_doboz2";
             this.cegAdoszam_doboz2.Size = new System.Drawing.Size(27, 20);
             this.cegAdoszam_doboz2.TabIndex = 57;
+            this.cegAdoszam_doboz2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // cegAdoszam_doboz1
             // 
             this.cegAdoszam_doboz1.Location = new System.Drawing.Point(219, 542);
+            this.cegAdoszam_doboz1.MaxLength = 8;
             this.cegAdoszam_doboz1.Name = "cegAdoszam_doboz1";
             this.cegAdoszam_doboz1.Size = new System.Drawing.Size(89, 20);
             this.cegAdoszam_doboz1.TabIndex = 56;
+            this.cegAdoszam_doboz1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // cegjegyzekszam_doboz3
             // 
             this.cegjegyzekszam_doboz3.Location = new System.Drawing.Point(373, 507);
+            this.cegjegyzekszam_doboz3.MaxLength = 6;
             this.cegjegyzekszam_doboz3.Name = "cegjegyzekszam_doboz3";
             this.cegjegyzekszam_doboz3.Size = new System.Drawing.Size(72, 20);
             this.cegjegyzekszam_doboz3.TabIndex = 55;
+            this.cegjegyzekszam_doboz3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // cegjegyzekszam_doboz2
             // 
             this.cegjegyzekszam_doboz2.Location = new System.Drawing.Point(297, 507);
+            this.cegjegyzekszam_doboz2.MaxLength = 2;
             this.cegjegyzekszam_doboz2.Name = "cegjegyzekszam_doboz2";
             this.cegjegyzekszam_doboz2.Size = new System.Drawing.Size(39, 20);
             this.cegjegyzekszam_doboz2.TabIndex = 52;
+            this.cegjegyzekszam_doboz2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // cegjegyzekszam_doboz1
             // 
             this.cegjegyzekszam_doboz1.Location = new System.Drawing.Point(220, 506);
+            this.cegjegyzekszam_doboz1.MaxLength = 2;
             this.cegjegyzekszam_doboz1.Name = "cegjegyzekszam_doboz1";
             this.cegjegyzekszam_doboz1.Size = new System.Drawing.Size(39, 20);
             this.cegjegyzekszam_doboz1.TabIndex = 51;
+            this.cegjegyzekszam_doboz1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // telefonszamKezdo_felirat
             // 
@@ -244,12 +275,14 @@
             // cegNeve_Doboz
             // 
             this.cegNeve_Doboz.Location = new System.Drawing.Point(145, 49);
+            this.cegNeve_Doboz.MaxLength = 150;
             this.cegNeve_Doboz.Name = "cegNeve_Doboz";
             this.cegNeve_Doboz.Size = new System.Drawing.Size(210, 20);
             this.cegNeve_Doboz.TabIndex = 43;
             // 
             // CegCimeCsoport
             // 
+            this.CegCimeCsoport.BackColor = System.Drawing.Color.White;
             this.CegCimeCsoport.Controls.Add(this.cegCim_doboz);
             this.CegCimeCsoport.Controls.Add(this.cegCim_felirat);
             this.CegCimeCsoport.Controls.Add(this.cegIranyitoszam_doboz);
@@ -269,6 +302,7 @@
             // cegCim_doboz
             // 
             this.cegCim_doboz.Location = new System.Drawing.Point(241, 154);
+            this.cegCim_doboz.MaxLength = 300;
             this.cegCim_doboz.Multiline = true;
             this.cegCim_doboz.Name = "cegCim_doboz";
             this.cegCim_doboz.Size = new System.Drawing.Size(214, 53);
@@ -286,9 +320,11 @@
             // cegIranyitoszam_doboz
             // 
             this.cegIranyitoszam_doboz.Location = new System.Drawing.Point(241, 115);
+            this.cegIranyitoszam_doboz.MaxLength = 4;
             this.cegIranyitoszam_doboz.Name = "cegIranyitoszam_doboz";
             this.cegIranyitoszam_doboz.Size = new System.Drawing.Size(55, 24);
             this.cegIranyitoszam_doboz.TabIndex = 11;
+            this.cegIranyitoszam_doboz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // cegIranyitoszam_felirat
             // 
@@ -302,6 +338,7 @@
             // cegVaros_doboz
             // 
             this.cegVaros_doboz.Location = new System.Drawing.Point(241, 76);
+            this.cegVaros_doboz.MaxLength = 50;
             this.cegVaros_doboz.Name = "cegVaros_doboz";
             this.cegVaros_doboz.Size = new System.Drawing.Size(180, 24);
             this.cegVaros_doboz.TabIndex = 8;
@@ -318,6 +355,7 @@
             // szamlazasiNev_doboz
             // 
             this.szamlazasiNev_doboz.Location = new System.Drawing.Point(241, 36);
+            this.szamlazasiNev_doboz.MaxLength = 150;
             this.szamlazasiNev_doboz.Name = "szamlazasiNev_doboz";
             this.szamlazasiNev_doboz.Size = new System.Drawing.Size(180, 24);
             this.szamlazasiNev_doboz.TabIndex = 5;
@@ -343,6 +381,7 @@
             // 
             // LevelezesiCimCsoport
             // 
+            this.LevelezesiCimCsoport.BackColor = System.Drawing.Color.White;
             this.LevelezesiCimCsoport.Controls.Add(this.levelezesiCim_doboz);
             this.LevelezesiCimCsoport.Controls.Add(this.levelezesiCim_felirat);
             this.LevelezesiCimCsoport.Controls.Add(this.levelezesiIranyitoszam_doboz);
@@ -360,6 +399,7 @@
             // levelezesiCim_doboz
             // 
             this.levelezesiCim_doboz.Location = new System.Drawing.Point(241, 110);
+            this.levelezesiCim_doboz.MaxLength = 300;
             this.levelezesiCim_doboz.Multiline = true;
             this.levelezesiCim_doboz.Name = "levelezesiCim_doboz";
             this.levelezesiCim_doboz.Size = new System.Drawing.Size(214, 53);
@@ -377,9 +417,11 @@
             // levelezesiIranyitoszam_doboz
             // 
             this.levelezesiIranyitoszam_doboz.Location = new System.Drawing.Point(241, 71);
+            this.levelezesiIranyitoszam_doboz.MaxLength = 4;
             this.levelezesiIranyitoszam_doboz.Name = "levelezesiIranyitoszam_doboz";
             this.levelezesiIranyitoszam_doboz.Size = new System.Drawing.Size(55, 24);
             this.levelezesiIranyitoszam_doboz.TabIndex = 11;
+            this.levelezesiIranyitoszam_doboz.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.haNemSzam);
             // 
             // levelezesiIranyitoszam_felirat
             // 
@@ -393,6 +435,7 @@
             // levelezesiVaros_doboz
             // 
             this.levelezesiVaros_doboz.Location = new System.Drawing.Point(241, 32);
+            this.levelezesiVaros_doboz.MaxLength = 50;
             this.levelezesiVaros_doboz.Name = "levelezesiVaros_doboz";
             this.levelezesiVaros_doboz.Size = new System.Drawing.Size(180, 24);
             this.levelezesiVaros_doboz.TabIndex = 8;
@@ -412,9 +455,9 @@
             this.cegSzerkesztoAblakSzoveg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cegSzerkesztoAblakSzoveg.Location = new System.Drawing.Point(149, 9);
             this.cegSzerkesztoAblakSzoveg.Name = "cegSzerkesztoAblakSzoveg";
-            this.cegSzerkesztoAblakSzoveg.Size = new System.Drawing.Size(197, 24);
+            this.cegSzerkesztoAblakSzoveg.Size = new System.Drawing.Size(200, 24);
             this.cegSzerkesztoAblakSzoveg.TabIndex = 41;
-            this.cegSzerkesztoAblakSzoveg.Text = "<cég ablak funkció>";
+            this.cegSzerkesztoAblakSzoveg.Text = "<Cég ablak funkció>";
             // 
             // cegWeboldala_felirat
             // 
@@ -428,6 +471,7 @@
             // cegWeboldala_doboz
             // 
             this.cegWeboldala_doboz.Location = new System.Drawing.Point(219, 619);
+            this.cegWeboldala_doboz.MaxLength = 150;
             this.cegWeboldala_doboz.Name = "cegWeboldala_doboz";
             this.cegWeboldala_doboz.Size = new System.Drawing.Size(234, 20);
             this.cegWeboldala_doboz.TabIndex = 70;
@@ -464,9 +508,12 @@
             this.Controls.Add(this.cegNeve_felirat);
             this.Controls.Add(this.LevelezesiCimCsoport);
             this.Controls.Add(this.cegSzerkesztoAblakSzoveg);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "SzerkesztesAblak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SzerkesztesAblak";
+            this.Text = "<Cég ablak funkció>";
             this.Load += new System.EventHandler(this.SzerkesztesAblak_Load);
             this.CegCimeCsoport.ResumeLayout(false);
             this.CegCimeCsoport.PerformLayout();
@@ -478,6 +525,7 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Button MegseGomb;
         private System.Windows.Forms.Button mentesGomb;
         private System.Windows.Forms.Label vonal5;
