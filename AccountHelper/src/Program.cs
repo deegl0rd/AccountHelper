@@ -25,11 +25,15 @@ namespace AccountHelper.src
 
         #endregion
 
-        #region Mappanevek
+        #region Fájl/mappa nevek
 
+        //Mappák
         public static string temp = "temp";
         public static string cegek = "cegek";
         public static string alkalmazottak = "alkalmazottak";
+
+        //Fájlok
+        public static string verzioFajl = "info.txt";
 
         #endregion
 
@@ -44,6 +48,10 @@ namespace AccountHelper.src
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
+
+            AutoUpdater.GetGitRepoVersion();
+
+            VerzioFajlIr();
             MappaLetrehoz();
             Futtat();
             return;
@@ -74,6 +82,13 @@ namespace AccountHelper.src
                 work_Folder = Application.StartupPath + "/" + mappa;
                 Directory.CreateDirectory(work_Folder);
             }
+        }
+
+        public static void VerzioFajlIr()
+        {
+            string path = Application.StartupPath + "/" + verzioFajl;
+
+            File.WriteAllText(path, Application.ProductVersion);
         }
     }
 }

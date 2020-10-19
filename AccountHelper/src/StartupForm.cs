@@ -44,11 +44,19 @@ namespace AccountHelper.src
             Ceg.Betoltes();
             IdoSav.Text = DateTime.Now.ToString();
             CegekSav.Text = Ceg.lista.Count.ToString() + " db cég betöltve";
+            VerzioszamSav.Text = "Verzió: " +  Application.ProductVersion;
+            VerzioszamSav.Alignment = ToolStripItemAlignment.Right;
         }
 
         private void StartupForm_Load(object sender, EventArgs e)
         {
             Idozito.Start();
+            MessageBox.Show(AutoUpdater.IsNewestVersion() + " Jelenlegi verzió: " + Application.ProductVersion + " Legújabb verzió: " + AutoUpdater.GetGitRepoVersion());
+        }
+
+        private void VerzioszamSav_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

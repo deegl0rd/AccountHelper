@@ -40,6 +40,7 @@
             this.CegekSav = new System.Windows.Forms.ToolStripStatusLabel();
             this.Splash = new System.Windows.Forms.PictureBox();
             this.Idozito = new System.Windows.Forms.Timer(this.components);
+            this.VerzioszamSav = new System.Windows.Forms.ToolStripStatusLabel();
             this.FelsoSav.SuspendLayout();
             this.AlsoSav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Splash)).BeginInit();
@@ -89,7 +90,9 @@
             // 
             this.AlsoSav.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.IdoSav,
-            this.CegekSav});
+            this.CegekSav,
+            this.VerzioszamSav});
+            this.AlsoSav.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.AlsoSav.Location = new System.Drawing.Point(0, 623);
             this.AlsoSav.Name = "AlsoSav";
             this.AlsoSav.Size = new System.Drawing.Size(800, 24);
@@ -99,15 +102,22 @@
             // 
             // IdoSav
             // 
-            this.IdoSav.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
+            this.IdoSav.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.IdoSav.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.IdoSav.Name = "IdoSav";
             this.IdoSav.Size = new System.Drawing.Size(44, 19);
             this.IdoSav.Text = "<idő>";
             // 
             // CegekSav
             // 
+            this.CegekSav.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.CegekSav.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.CegekSav.Name = "CegekSav";
-            this.CegekSav.Size = new System.Drawing.Size(103, 19);
+            this.CegekSav.Size = new System.Drawing.Size(107, 19);
             this.CegekSav.Text = "<betöltött cégek>";
             // 
             // Splash
@@ -123,6 +133,17 @@
             // Idozito
             // 
             this.Idozito.Tick += new System.EventHandler(this.Idozito_Tick);
+            // 
+            // VerzioszamSav
+            // 
+            this.VerzioszamSav.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.VerzioszamSav.IsLink = true;
+            this.VerzioszamSav.Name = "VerzioszamSav";
+            this.VerzioszamSav.Size = new System.Drawing.Size(85, 19);
+            this.VerzioszamSav.Text = "<verzioszam>";
+            this.VerzioszamSav.Click += new System.EventHandler(this.VerzioszamSav_Click);
             // 
             // StartupForm
             // 
@@ -163,5 +184,6 @@
         private System.Windows.Forms.ToolStripStatusLabel IdoSav;
         private System.Windows.Forms.ToolStripStatusLabel CegekSav;
         private System.Windows.Forms.Timer Idozito;
+        private System.Windows.Forms.ToolStripStatusLabel VerzioszamSav;
     }
 }

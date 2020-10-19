@@ -144,7 +144,7 @@ namespace AccountHelper.src.XKROlvaso
 
         #endregion
 
-        #region Ablak betöltés event
+        #region Ablak eventek
 
         private void KezeloAblak_Load(object sender, EventArgs e)
         {

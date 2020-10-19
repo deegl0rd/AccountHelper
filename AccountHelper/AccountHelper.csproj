@@ -121,6 +121,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="src\AutoUpdater.cs" />
     <Compile Include="src\Logger.cs" />
     <Compile Include="src\Nyilvantartas\Alkalmazott.cs" />
     <Compile Include="src\Nyilvantartas\Ceg.cs" />
