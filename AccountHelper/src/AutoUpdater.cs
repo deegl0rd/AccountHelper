@@ -20,7 +20,7 @@ namespace AccountHelper.src
             {
                 Encoding = Encoding.UTF8
             };
-            string repoVersion = client.DownloadString("https://raw.githubusercontent.com/deegl0rd/AccountHelper/master/AccountHelper/info.txt");
+            string repoVersion = client.DownloadString("https://raw.githubusercontent.com/deegl0rd/AccountHelper/master/AccountHelper/bin/Debug/version.txt");
             byte[] versionBytes = Encoding.UTF8.GetBytes(repoVersion);
 
             return Encoding.UTF8.GetString(versionBytes);

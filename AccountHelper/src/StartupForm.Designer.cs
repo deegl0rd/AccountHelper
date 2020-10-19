@@ -38,9 +38,9 @@
             this.AlsoSav = new System.Windows.Forms.StatusStrip();
             this.IdoSav = new System.Windows.Forms.ToolStripStatusLabel();
             this.CegekSav = new System.Windows.Forms.ToolStripStatusLabel();
+            this.VerzioszamSav = new System.Windows.Forms.ToolStripStatusLabel();
             this.Splash = new System.Windows.Forms.PictureBox();
             this.Idozito = new System.Windows.Forms.Timer(this.components);
-            this.VerzioszamSav = new System.Windows.Forms.ToolStripStatusLabel();
             this.FelsoSav.SuspendLayout();
             this.AlsoSav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Splash)).BeginInit();
@@ -120,6 +120,17 @@
             this.CegekSav.Size = new System.Drawing.Size(107, 19);
             this.CegekSav.Text = "<betöltött cégek>";
             // 
+            // VerzioszamSav
+            // 
+            this.VerzioszamSav.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.VerzioszamSav.IsLink = true;
+            this.VerzioszamSav.Name = "VerzioszamSav";
+            this.VerzioszamSav.Size = new System.Drawing.Size(85, 19);
+            this.VerzioszamSav.Text = "<verzioszam>";
+            this.VerzioszamSav.Click += new System.EventHandler(this.VerzioszamSav_Click);
+            // 
             // Splash
             // 
             this.Splash.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -133,17 +144,6 @@
             // Idozito
             // 
             this.Idozito.Tick += new System.EventHandler(this.Idozito_Tick);
-            // 
-            // VerzioszamSav
-            // 
-            this.VerzioszamSav.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.VerzioszamSav.IsLink = true;
-            this.VerzioszamSav.Name = "VerzioszamSav";
-            this.VerzioszamSav.Size = new System.Drawing.Size(85, 19);
-            this.VerzioszamSav.Text = "<verzioszam>";
-            this.VerzioszamSav.Click += new System.EventHandler(this.VerzioszamSav_Click);
             // 
             // StartupForm
             // 
@@ -162,6 +162,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AccountHelper";
             this.Load += new System.EventHandler(this.StartupForm_Load);
+            this.Shown += new System.EventHandler(this.StartupForm_Shown);
             this.FelsoSav.ResumeLayout(false);
             this.FelsoSav.PerformLayout();
             this.AlsoSav.ResumeLayout(false);

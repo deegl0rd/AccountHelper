@@ -33,7 +33,7 @@ namespace AccountHelper.src
         public static string alkalmazottak = "alkalmazottak";
 
         //Fájlok
-        public static string verzioFajl = "info.txt";
+        public static string verzioFajl = "version.txt";
 
         #endregion
 

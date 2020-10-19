@@ -143,6 +143,12 @@
     <Compile Include="src\StartupForm.Designer.cs">
       <DependentUpon>StartupForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\UpdateAblak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UpdateAblak.Designer.cs">
+      <DependentUpon>UpdateAblak.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\XKROlvaso\ExcelKezelo.cs" />
     <Compile Include="src\HitelesitoAblak.cs">
       <SubType>Form</SubType>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\StartupForm.resx">
       <DependentUpon>StartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UpdateAblak.resx">
+      <DependentUpon>UpdateAblak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\XKROlvaso\KezeloAblak.resx">
       <DependentUpon>KezeloAblak.cs</DependentUpon>
@@ -268,6 +277,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\updates_picture1.png" />
+    <None Include="Resources\updates_picture.png" />
     <None Include="Resources\icon_add.png" />
   </ItemGroup>
   <ItemGroup>

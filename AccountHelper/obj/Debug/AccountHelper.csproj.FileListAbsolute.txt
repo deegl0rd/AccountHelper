@@ -36,3 +36,4 @@ E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.CopyComplete
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.exe
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.pdb
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csprojAssemblyReference.cache
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.UpdateAblak.resources

@@ -130,5 +130,17 @@ namespace AccountHelper.Properties {
                 this["licenszKulcs"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool checkForUpdate {
+            get {
+                return ((bool)(this["checkForUpdate"]));
+            }
+            set {
+                this["checkForUpdate"] = value;
+            }
+        }
     }
 }

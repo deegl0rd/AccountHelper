@@ -1,4 +1,5 @@
-﻿using AccountHelper.src.Nyilvantartas;
+﻿using AccountHelper.Properties;
+using AccountHelper.src.Nyilvantartas;
 using AccountHelper.src.XKROlvaso;
 using System;
 using System.Collections.Generic;
@@ -51,12 +52,22 @@ namespace AccountHelper.src
         private void StartupForm_Load(object sender, EventArgs e)
         {
             Idozito.Start();
-            MessageBox.Show(AutoUpdater.IsNewestVersion() + " Jelenlegi verzió: " + Application.ProductVersion + " Legújabb verzió: " + AutoUpdater.GetGitRepoVersion());
         }
+        private void StartupForm_Shown(object sender, EventArgs e)
+        {
+            if (!AutoUpdater.IsNewestVersion())
+            {
+                if (Settings.Default["checkForUpdate"].Equals(true))
+                {
+                    new UpdateAblak().ShowDialog();
+                }
+            }
+        }
+
 
         private void VerzioszamSav_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start("https://github.com/deegl0rd/AccountHelper");
         }
     }
 }
