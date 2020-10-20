@@ -41,6 +41,7 @@
             this.VerzioszamSav = new System.Windows.Forms.ToolStripStatusLabel();
             this.Splash = new System.Windows.Forms.PictureBox();
             this.Idozito = new System.Windows.Forms.Timer(this.components);
+            this.beállításokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FelsoSav.SuspendLayout();
             this.AlsoSav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Splash)).BeginInit();
@@ -52,6 +53,7 @@
             this.nyilvántartásToolStripMenuItem,
             this.XKROlvasóToolStripMenuItem,
             this.munkaidőToolStripMenuItem,
+            this.beállításokToolStripMenuItem,
             this.kilépésToolStripMenuItem});
             this.FelsoSav.Location = new System.Drawing.Point(0, 0);
             this.FelsoSav.Name = "FelsoSav";
@@ -145,6 +147,13 @@
             // 
             this.Idozito.Tick += new System.EventHandler(this.Idozito_Tick);
             // 
+            // beállításokToolStripMenuItem
+            // 
+            this.beállításokToolStripMenuItem.Name = "beállításokToolStripMenuItem";
+            this.beállításokToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.beállításokToolStripMenuItem.Text = "Beállítások";
+            this.beállításokToolStripMenuItem.Click += new System.EventHandler(this.BeállításokToolStripMenuItem_Click);
+            // 
             // StartupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,7 +166,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.FelsoSav;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "StartupForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AccountHelper";
@@ -186,5 +194,6 @@
         private System.Windows.Forms.ToolStripStatusLabel CegekSav;
         private System.Windows.Forms.Timer Idozito;
         private System.Windows.Forms.ToolStripStatusLabel VerzioszamSav;
+        private System.Windows.Forms.ToolStripMenuItem beállításokToolStripMenuItem;
     }
 }

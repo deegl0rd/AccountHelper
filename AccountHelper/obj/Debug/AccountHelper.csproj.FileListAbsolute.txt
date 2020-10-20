@@ -25,7 +25,6 @@ E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Runtime.CompilerServices.U
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csproj.ResolveComReference.cache
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.HitelesitoAblak.resources
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.NyilvantartasAblak.resources
-E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.SzerkesztesAblak.resources
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.StartupForm.resources
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.XKROlvaso.KezeloAblak.resources
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.NevjegyPanel.resources
@@ -37,3 +36,8 @@ E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.exe
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.pdb
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.csprojAssemblyReference.cache
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.UpdateAblak.resources
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\ObjectListView.dll
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\ObjectListView.xml
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Beallitasok.BeallitasokAblak.resources
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.CegSzerkesztesAblak.resources
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.SzervezetiEgysegSzerkesztesAblak.resources

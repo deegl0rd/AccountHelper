@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace AccountHelper.src.Nyilvantartas
 {
-    partial class SzerkesztesAblak
+    partial class CegSzerkesztesAblak
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@ namespace AccountHelper.src.Nyilvantartas
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SzerkesztesAblak));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CegSzerkesztesAblak));
             this.MegseGomb = new System.Windows.Forms.Button();
             this.mentesGomb = new System.Windows.Forms.Button();
             this.vonal5 = new System.Windows.Forms.Label();
@@ -297,7 +297,7 @@ namespace AccountHelper.src.Nyilvantartas
             this.CegCimeCsoport.Size = new System.Drawing.Size(471, 223);
             this.CegCimeCsoport.TabIndex = 44;
             this.CegCimeCsoport.TabStop = false;
-            this.CegCimeCsoport.Text = "Cég címe:";
+            this.CegCimeCsoport.Text = "Cég címe";
             // 
             // cegCim_doboz
             // 
@@ -394,7 +394,7 @@ namespace AccountHelper.src.Nyilvantartas
             this.LevelezesiCimCsoport.Size = new System.Drawing.Size(471, 179);
             this.LevelezesiCimCsoport.TabIndex = 45;
             this.LevelezesiCimCsoport.TabStop = false;
-            this.LevelezesiCimCsoport.Text = "Levelezési cím:";
+            this.LevelezesiCimCsoport.Text = "Levelezési cím";
             // 
             // levelezesiCim_doboz
             // 
@@ -451,13 +451,13 @@ namespace AccountHelper.src.Nyilvantartas
             // 
             // cegSzerkesztoAblakSzoveg
             // 
-            this.cegSzerkesztoAblakSzoveg.AutoSize = true;
             this.cegSzerkesztoAblakSzoveg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cegSzerkesztoAblakSzoveg.Location = new System.Drawing.Point(149, 9);
+            this.cegSzerkesztoAblakSzoveg.Location = new System.Drawing.Point(12, 9);
             this.cegSzerkesztoAblakSzoveg.Name = "cegSzerkesztoAblakSzoveg";
-            this.cegSzerkesztoAblakSzoveg.Size = new System.Drawing.Size(200, 24);
+            this.cegSzerkesztoAblakSzoveg.Size = new System.Drawing.Size(471, 24);
             this.cegSzerkesztoAblakSzoveg.TabIndex = 41;
-            this.cegSzerkesztoAblakSzoveg.Text = "<Cég ablak funkció>";
+            this.cegSzerkesztoAblakSzoveg.Text = "<Cég szerkesztés ablak funkció>";
+            this.cegSzerkesztoAblakSzoveg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cegWeboldala_felirat
             // 
@@ -476,7 +476,7 @@ namespace AccountHelper.src.Nyilvantartas
             this.cegWeboldala_doboz.Size = new System.Drawing.Size(234, 20);
             this.cegWeboldala_doboz.TabIndex = 70;
             // 
-            // SzerkesztesAblak
+            // CegSzerkesztesAblak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -511,9 +511,9 @@ namespace AccountHelper.src.Nyilvantartas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "SzerkesztesAblak";
+            this.Name = "CegSzerkesztesAblak";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "<Cég ablak funkció>";
+            this.Text = "<Cég szerkesztés ablak funkció>";
             this.Load += new System.EventHandler(this.SzerkesztesAblak_Load);
             this.CegCimeCsoport.ResumeLayout(false);
             this.CegCimeCsoport.PerformLayout();

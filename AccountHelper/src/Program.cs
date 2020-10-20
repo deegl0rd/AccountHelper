@@ -1,4 +1,4 @@
-﻿using AccountHelper.Properties;
+﻿using AccountHelper.src.Beallitasok;
 using AccountHelper.src.Nyilvantartas;
 using AccountHelper.src.XKROlvaso;
 using System;
@@ -21,7 +21,9 @@ namespace AccountHelper.src
         public static Form HitelesitoAblak = new HitelesitoAblak();
         public static Form NevjegyPanel = new NevjegyPanel();
         public static Form NyilvantartasAblak = new NyilvantartasAblak();
-        public static Form SzerkesztesAblak = new SzerkesztesAblak();
+        public static Form CegSzerkesztesAblak = new CegSzerkesztesAblak();
+        public static Form BeallitasokAblak = new BeallitasokAblak();
+        public static Form SzervezetiEgysegSzerkesztesAblak = new SzervezetiEgysegSzerkesztesAblak();
 
         #endregion
 
@@ -31,6 +33,7 @@ namespace AccountHelper.src
         public static string temp = "temp";
         public static string cegek = "cegek";
         public static string alkalmazottak = "alkalmazottak";
+        public static string szervezeti_egysegek = "szervezeti_egysegek";
 
         //Fájlok
         public static string verzioFajl = "version.txt";

@@ -242,7 +242,7 @@ namespace AccountHelper.src.Nyilvantartas
             writer.WriteEndDocument();
             writer.Flush();
 
-            Console.WriteLine("file created");
+            Console.WriteLine("ceg file created");
         }
 
         #endregion

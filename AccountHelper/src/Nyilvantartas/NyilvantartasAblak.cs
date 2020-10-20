@@ -35,12 +35,12 @@ namespace AccountHelper.src.Nyilvantartas
         {
             tartalomDoboz.Text = "";
             cegLista.Items.Clear();
-            Ceg.Betoltes();
-            ListViewItem item;
+            szervezetiEgysegLista.Items.Clear();
 
+            Ceg.Betoltes();
             foreach (Ceg c in Ceg.lista)
             {
-                item = new ListViewItem(c.ceg_neve)
+                ListViewItem item = new ListViewItem(c.ceg_neve)
                 {
                     UseItemStyleForSubItems = false,
                     Tag = ReverseSlash(c.path)
@@ -75,20 +75,20 @@ namespace AccountHelper.src.Nyilvantartas
 
         private void HozzaadasGomb_Click(object sender, EventArgs e)
         {
-            SzerkesztesAblak.code = false;
-            Program.SzerkesztesAblak.ShowDialog();
+            CegSzerkesztesAblak.code = false;
+            Program.CegSzerkesztesAblak.ShowDialog();
         }
 
         private void SzerkesztesGomb_Click(object sender, EventArgs e)
         {
             if (cegLista.SelectedItems.Count > 1 || cegLista.SelectedItems.Count == 0) return;
 
-            SzerkesztesAblak.code = true;
+            CegSzerkesztesAblak.code = true;
             foreach (ListViewItem item in cegLista.SelectedItems)
             {
-                SzerkesztesAblak.szerkesztett = item.Tag.ToString();
+                CegSzerkesztesAblak.szerkesztett = item.Tag.ToString();
             }
-            Program.SzerkesztesAblak.ShowDialog();
+            Program.CegSzerkesztesAblak.ShowDialog();
         }
 
         private void CegLista_MouseClick(object sender, MouseEventArgs e)
@@ -97,6 +97,17 @@ namespace AccountHelper.src.Nyilvantartas
             {
                 tartalomDoboz.Text = File.ReadAllText(cegLista.FocusedItem.Tag.ToString());
             }
+        }
+
+        private void Szerv_torlesGomb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Szerv_hozzadasGomb_Click(object sender, EventArgs e)
+        {
+            SzervezetiEgysegSzerkesztesAblak.code = false;
+            Program.SzervezetiEgysegSzerkesztesAblak.ShowDialog();
         }
     }
 }

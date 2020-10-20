@@ -31,21 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NyilvantartasAblak));
             this.menuVezerlo = new System.Windows.Forms.TabControl();
             this.oldal_Ceg = new System.Windows.Forms.TabPage();
+            this.csoport_SzervezetiEgyseg = new System.Windows.Forms.GroupBox();
             this.csoport_Cegek = new System.Windows.Forms.GroupBox();
-            this.szerkesztesGomb = new System.Windows.Forms.Button();
-            this.torlesGomb = new System.Windows.Forms.Button();
-            this.hozzaadasGomb = new System.Windows.Forms.Button();
+            this.ceg_szerkesztesGomb = new System.Windows.Forms.Button();
+            this.ceg_torlesGomb = new System.Windows.Forms.Button();
+            this.ceg_hozzaadasGomb = new System.Windows.Forms.Button();
             this.frissitesGomb = new System.Windows.Forms.Button();
-            this.tagLista = new System.Windows.Forms.ListView();
+            this.szervezetiEgysegLista = new System.Windows.Forms.ListView();
             this.oszlop_tagNeve = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oszlop_tagCimke = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tartalomDoboz = new System.Windows.Forms.TextBox();
             this.cegLista = new System.Windows.Forms.ListView();
             this.oszlop_cegNev = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.oszlop_fajlHelye = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.csoport_Tagok = new System.Windows.Forms.GroupBox();
+            this.szerv_torlesGomb = new System.Windows.Forms.Button();
+            this.szerv_hozzadasGomb = new System.Windows.Forms.Button();
             this.menuVezerlo.SuspendLayout();
             this.oldal_Ceg.SuspendLayout();
+            this.csoport_SzervezetiEgyseg.SuspendLayout();
             this.csoport_Cegek.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,10 +65,10 @@
             // 
             // oldal_Ceg
             // 
-            this.oldal_Ceg.Controls.Add(this.csoport_Tagok);
+            this.oldal_Ceg.Controls.Add(this.csoport_SzervezetiEgyseg);
             this.oldal_Ceg.Controls.Add(this.csoport_Cegek);
             this.oldal_Ceg.Controls.Add(this.frissitesGomb);
-            this.oldal_Ceg.Controls.Add(this.tagLista);
+            this.oldal_Ceg.Controls.Add(this.szervezetiEgysegLista);
             this.oldal_Ceg.Controls.Add(this.tartalomDoboz);
             this.oldal_Ceg.Controls.Add(this.cegLista);
             this.oldal_Ceg.Location = new System.Drawing.Point(4, 22);
@@ -73,14 +76,25 @@
             this.oldal_Ceg.Padding = new System.Windows.Forms.Padding(3);
             this.oldal_Ceg.Size = new System.Drawing.Size(788, 680);
             this.oldal_Ceg.TabIndex = 0;
-            this.oldal_Ceg.Text = "Cégek";
+            this.oldal_Ceg.Text = "Cégek nyilvántartása";
             this.oldal_Ceg.UseVisualStyleBackColor = true;
+            // 
+            // csoport_SzervezetiEgyseg
+            // 
+            this.csoport_SzervezetiEgyseg.Controls.Add(this.szerv_hozzadasGomb);
+            this.csoport_SzervezetiEgyseg.Controls.Add(this.szerv_torlesGomb);
+            this.csoport_SzervezetiEgyseg.Location = new System.Drawing.Point(490, 6);
+            this.csoport_SzervezetiEgyseg.Name = "csoport_SzervezetiEgyseg";
+            this.csoport_SzervezetiEgyseg.Size = new System.Drawing.Size(295, 61);
+            this.csoport_SzervezetiEgyseg.TabIndex = 8;
+            this.csoport_SzervezetiEgyseg.TabStop = false;
+            this.csoport_SzervezetiEgyseg.Text = "Szervezeti egységek";
             // 
             // csoport_Cegek
             // 
-            this.csoport_Cegek.Controls.Add(this.szerkesztesGomb);
-            this.csoport_Cegek.Controls.Add(this.torlesGomb);
-            this.csoport_Cegek.Controls.Add(this.hozzaadasGomb);
+            this.csoport_Cegek.Controls.Add(this.ceg_szerkesztesGomb);
+            this.csoport_Cegek.Controls.Add(this.ceg_torlesGomb);
+            this.csoport_Cegek.Controls.Add(this.ceg_hozzaadasGomb);
             this.csoport_Cegek.Location = new System.Drawing.Point(3, 6);
             this.csoport_Cegek.Name = "csoport_Cegek";
             this.csoport_Cegek.Size = new System.Drawing.Size(372, 61);
@@ -88,50 +102,50 @@
             this.csoport_Cegek.TabStop = false;
             this.csoport_Cegek.Text = "Cégek";
             // 
-            // szerkesztesGomb
+            // ceg_szerkesztesGomb
             // 
-            this.szerkesztesGomb.BackColor = System.Drawing.Color.Transparent;
-            this.szerkesztesGomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.szerkesztesGomb.Image = global::AccountHelper.Properties.Resources.icon_edit;
-            this.szerkesztesGomb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.szerkesztesGomb.Location = new System.Drawing.Point(243, 16);
-            this.szerkesztesGomb.Name = "szerkesztesGomb";
-            this.szerkesztesGomb.Size = new System.Drawing.Size(123, 39);
-            this.szerkesztesGomb.TabIndex = 4;
-            this.szerkesztesGomb.Text = "Szerkesztés  ";
-            this.szerkesztesGomb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.szerkesztesGomb.UseVisualStyleBackColor = false;
-            this.szerkesztesGomb.Click += new System.EventHandler(this.SzerkesztesGomb_Click);
+            this.ceg_szerkesztesGomb.BackColor = System.Drawing.Color.Transparent;
+            this.ceg_szerkesztesGomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ceg_szerkesztesGomb.Image = global::AccountHelper.Properties.Resources.icon_edit;
+            this.ceg_szerkesztesGomb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ceg_szerkesztesGomb.Location = new System.Drawing.Point(243, 16);
+            this.ceg_szerkesztesGomb.Name = "ceg_szerkesztesGomb";
+            this.ceg_szerkesztesGomb.Size = new System.Drawing.Size(123, 39);
+            this.ceg_szerkesztesGomb.TabIndex = 4;
+            this.ceg_szerkesztesGomb.Text = "Szerkesztés  ";
+            this.ceg_szerkesztesGomb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ceg_szerkesztesGomb.UseVisualStyleBackColor = false;
+            this.ceg_szerkesztesGomb.Click += new System.EventHandler(this.SzerkesztesGomb_Click);
             // 
-            // torlesGomb
+            // ceg_torlesGomb
             // 
-            this.torlesGomb.BackColor = System.Drawing.Color.Transparent;
-            this.torlesGomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.torlesGomb.Image = global::AccountHelper.Properties.Resources.icon_delete_alt;
-            this.torlesGomb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.torlesGomb.Location = new System.Drawing.Point(137, 16);
-            this.torlesGomb.Name = "torlesGomb";
-            this.torlesGomb.Size = new System.Drawing.Size(100, 39);
-            this.torlesGomb.TabIndex = 1;
-            this.torlesGomb.Text = "Törlés      ";
-            this.torlesGomb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.torlesGomb.UseVisualStyleBackColor = false;
-            this.torlesGomb.Click += new System.EventHandler(this.TorlesGomb_Click);
+            this.ceg_torlesGomb.BackColor = System.Drawing.Color.Transparent;
+            this.ceg_torlesGomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ceg_torlesGomb.Image = global::AccountHelper.Properties.Resources.icon_delete_alt;
+            this.ceg_torlesGomb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ceg_torlesGomb.Location = new System.Drawing.Point(137, 16);
+            this.ceg_torlesGomb.Name = "ceg_torlesGomb";
+            this.ceg_torlesGomb.Size = new System.Drawing.Size(100, 39);
+            this.ceg_torlesGomb.TabIndex = 1;
+            this.ceg_torlesGomb.Text = "Törlés      ";
+            this.ceg_torlesGomb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ceg_torlesGomb.UseVisualStyleBackColor = false;
+            this.ceg_torlesGomb.Click += new System.EventHandler(this.TorlesGomb_Click);
             // 
-            // hozzaadasGomb
+            // ceg_hozzaadasGomb
             // 
-            this.hozzaadasGomb.BackColor = System.Drawing.Color.Transparent;
-            this.hozzaadasGomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.hozzaadasGomb.Image = ((System.Drawing.Image)(resources.GetObject("hozzaadasGomb.Image")));
-            this.hozzaadasGomb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.hozzaadasGomb.Location = new System.Drawing.Point(6, 16);
-            this.hozzaadasGomb.Name = "hozzaadasGomb";
-            this.hozzaadasGomb.Size = new System.Drawing.Size(125, 39);
-            this.hozzaadasGomb.TabIndex = 2;
-            this.hozzaadasGomb.Text = "Hozzáadás    ";
-            this.hozzaadasGomb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.hozzaadasGomb.UseVisualStyleBackColor = false;
-            this.hozzaadasGomb.Click += new System.EventHandler(this.HozzaadasGomb_Click);
+            this.ceg_hozzaadasGomb.BackColor = System.Drawing.Color.Transparent;
+            this.ceg_hozzaadasGomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ceg_hozzaadasGomb.Image = ((System.Drawing.Image)(resources.GetObject("ceg_hozzaadasGomb.Image")));
+            this.ceg_hozzaadasGomb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ceg_hozzaadasGomb.Location = new System.Drawing.Point(6, 16);
+            this.ceg_hozzaadasGomb.Name = "ceg_hozzaadasGomb";
+            this.ceg_hozzaadasGomb.Size = new System.Drawing.Size(125, 39);
+            this.ceg_hozzaadasGomb.TabIndex = 2;
+            this.ceg_hozzaadasGomb.Text = "Hozzáadás    ";
+            this.ceg_hozzaadasGomb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ceg_hozzaadasGomb.UseVisualStyleBackColor = false;
+            this.ceg_hozzaadasGomb.Click += new System.EventHandler(this.HozzaadasGomb_Click);
             // 
             // frissitesGomb
             // 
@@ -148,20 +162,20 @@
             this.frissitesGomb.UseVisualStyleBackColor = false;
             this.frissitesGomb.Click += new System.EventHandler(this.FrissitesGomb_Click);
             // 
-            // tagLista
+            // szervezetiEgysegLista
             // 
-            this.tagLista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.szervezetiEgysegLista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.oszlop_tagNeve,
             this.oszlop_tagCimke});
-            this.tagLista.FullRowSelect = true;
-            this.tagLista.GridLines = true;
-            this.tagLista.HideSelection = false;
-            this.tagLista.Location = new System.Drawing.Point(490, 73);
-            this.tagLista.Name = "tagLista";
-            this.tagLista.Size = new System.Drawing.Size(295, 604);
-            this.tagLista.TabIndex = 6;
-            this.tagLista.UseCompatibleStateImageBehavior = false;
-            this.tagLista.View = System.Windows.Forms.View.Details;
+            this.szervezetiEgysegLista.FullRowSelect = true;
+            this.szervezetiEgysegLista.GridLines = true;
+            this.szervezetiEgysegLista.HideSelection = false;
+            this.szervezetiEgysegLista.Location = new System.Drawing.Point(490, 73);
+            this.szervezetiEgysegLista.Name = "szervezetiEgysegLista";
+            this.szervezetiEgysegLista.Size = new System.Drawing.Size(295, 604);
+            this.szervezetiEgysegLista.TabIndex = 6;
+            this.szervezetiEgysegLista.UseCompatibleStateImageBehavior = false;
+            this.szervezetiEgysegLista.View = System.Windows.Forms.View.Details;
             // 
             // oszlop_tagNeve
             // 
@@ -209,14 +223,35 @@
             this.oszlop_fajlHelye.Text = "Forrás";
             this.oszlop_fajlHelye.Width = 150;
             // 
-            // csoport_Tagok
+            // szerv_torlesGomb
             // 
-            this.csoport_Tagok.Location = new System.Drawing.Point(490, 6);
-            this.csoport_Tagok.Name = "csoport_Tagok";
-            this.csoport_Tagok.Size = new System.Drawing.Size(295, 61);
-            this.csoport_Tagok.TabIndex = 8;
-            this.csoport_Tagok.TabStop = false;
-            this.csoport_Tagok.Text = "Kontaktok";
+            this.szerv_torlesGomb.BackColor = System.Drawing.Color.Transparent;
+            this.szerv_torlesGomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.szerv_torlesGomb.Image = global::AccountHelper.Properties.Resources.icon_delete_alt;
+            this.szerv_torlesGomb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.szerv_torlesGomb.Location = new System.Drawing.Point(137, 16);
+            this.szerv_torlesGomb.Name = "szerv_torlesGomb";
+            this.szerv_torlesGomb.Size = new System.Drawing.Size(100, 39);
+            this.szerv_torlesGomb.TabIndex = 5;
+            this.szerv_torlesGomb.Text = "Törlés      ";
+            this.szerv_torlesGomb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.szerv_torlesGomb.UseVisualStyleBackColor = false;
+            this.szerv_torlesGomb.Click += new System.EventHandler(this.Szerv_torlesGomb_Click);
+            // 
+            // szerv_hozzadasGomb
+            // 
+            this.szerv_hozzadasGomb.BackColor = System.Drawing.Color.Transparent;
+            this.szerv_hozzadasGomb.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.szerv_hozzadasGomb.Image = ((System.Drawing.Image)(resources.GetObject("szerv_hozzadasGomb.Image")));
+            this.szerv_hozzadasGomb.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.szerv_hozzadasGomb.Location = new System.Drawing.Point(6, 16);
+            this.szerv_hozzadasGomb.Name = "szerv_hozzadasGomb";
+            this.szerv_hozzadasGomb.Size = new System.Drawing.Size(125, 39);
+            this.szerv_hozzadasGomb.TabIndex = 5;
+            this.szerv_hozzadasGomb.Text = "Hozzáadás    ";
+            this.szerv_hozzadasGomb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.szerv_hozzadasGomb.UseVisualStyleBackColor = false;
+            this.szerv_hozzadasGomb.Click += new System.EventHandler(this.Szerv_hozzadasGomb_Click);
             // 
             // NyilvantartasAblak
             // 
@@ -234,6 +269,7 @@
             this.menuVezerlo.ResumeLayout(false);
             this.oldal_Ceg.ResumeLayout(false);
             this.oldal_Ceg.PerformLayout();
+            this.csoport_SzervezetiEgyseg.ResumeLayout(false);
             this.csoport_Cegek.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -243,18 +279,20 @@
 
         private System.Windows.Forms.TabControl menuVezerlo;
         private System.Windows.Forms.TabPage oldal_Ceg;
-        private System.Windows.Forms.Button torlesGomb;
+        private System.Windows.Forms.Button ceg_torlesGomb;
         private System.Windows.Forms.ListView cegLista;
-        private System.Windows.Forms.Button hozzaadasGomb;
+        private System.Windows.Forms.Button ceg_hozzaadasGomb;
         private System.Windows.Forms.ColumnHeader oszlop_cegNev;
         private System.Windows.Forms.ColumnHeader oszlop_fajlHelye;
         private System.Windows.Forms.Button frissitesGomb;
-        private System.Windows.Forms.Button szerkesztesGomb;
+        private System.Windows.Forms.Button ceg_szerkesztesGomb;
         private System.Windows.Forms.TextBox tartalomDoboz;
-        private System.Windows.Forms.ListView tagLista;
+        private System.Windows.Forms.ListView szervezetiEgysegLista;
         private System.Windows.Forms.ColumnHeader oszlop_tagNeve;
         private System.Windows.Forms.ColumnHeader oszlop_tagCimke;
         private System.Windows.Forms.GroupBox csoport_Cegek;
-        private System.Windows.Forms.GroupBox csoport_Tagok;
+        private System.Windows.Forms.GroupBox csoport_SzervezetiEgyseg;
+        private System.Windows.Forms.Button szerv_hozzadasGomb;
+        private System.Windows.Forms.Button szerv_torlesGomb;
     }
 }

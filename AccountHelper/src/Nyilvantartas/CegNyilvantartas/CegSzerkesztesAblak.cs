@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace AccountHelper.src.Nyilvantartas
 {
-    public partial class SzerkesztesAblak : Form
+    public partial class CegSzerkesztesAblak : Form
     {
         public static bool code = false;
 
@@ -36,7 +36,7 @@ namespace AccountHelper.src.Nyilvantartas
             return false;
         }
 
-        public SzerkesztesAblak()
+        public CegSzerkesztesAblak()
         {
             InitializeComponent();
         }

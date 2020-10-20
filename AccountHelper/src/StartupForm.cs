@@ -20,9 +20,9 @@ namespace AccountHelper.src
             InitializeComponent();
         }
 
-        private void KilepesGomb_Click(object sender, EventArgs e)
+        private void NyilvántartásToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Program.NyilvantartasAblak.ShowDialog();
         }
 
         private void XKROlvasóToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,14 +30,15 @@ namespace AccountHelper.src
             Program.KezeloAblak.ShowDialog();
         }
 
+
+        private void BeállításokToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.BeallitasokAblak.ShowDialog();
+        }
+
         private void KilépésToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void NyilvántartásToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Program.NyilvantartasAblak.ShowDialog();
         }
 
         private void Idozito_Tick(object sender, EventArgs e)

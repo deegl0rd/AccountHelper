@@ -76,6 +76,9 @@
     <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.20\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
+    </Reference>
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
     </Reference>
@@ -122,20 +125,34 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="src\AutoUpdater.cs" />
-    <Compile Include="src\Logger.cs" />
-    <Compile Include="src\Nyilvantartas\Alkalmazott.cs" />
-    <Compile Include="src\Nyilvantartas\Ceg.cs" />
+    <Compile Include="src\Beallitasok\Beallitas.cs" />
+    <Compile Include="src\Beallitasok\BeallitasokAblak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Beallitasok\BeallitasokAblak.Designer.cs">
+      <DependentUpon>BeallitasokAblak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\UNUSED\Logger.cs" />
+    <Compile Include="src\Nyilvantartas\Alkalmazott\Alkalmazott.cs" />
+    <Compile Include="src\Nyilvantartas\CegNyilvantartas\Ceg.cs" />
+    <Compile Include="src\Nyilvantartas\CegNyilvantartas\SzervezetiEgyseg.cs" />
+    <Compile Include="src\Nyilvantartas\CegNyilvantartas\SzervezetiEgysegSzerkesztesAblak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Nyilvantartas\CegNyilvantartas\SzervezetiEgysegSzerkesztesAblak.Designer.cs">
+      <DependentUpon>SzervezetiEgysegSzerkesztesAblak.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Nyilvantartas\NyilvantartasAblak.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\Nyilvantartas\NyilvantartasAblak.Designer.cs">
       <DependentUpon>NyilvantartasAblak.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\Nyilvantartas\SzerkesztesAblak.cs">
+    <Compile Include="src\Nyilvantartas\CegNyilvantartas\CegSzerkesztesAblak.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\Nyilvantartas\SzerkesztesAblak.Designer.cs">
-      <DependentUpon>SzerkesztesAblak.cs</DependentUpon>
+    <Compile Include="src\Nyilvantartas\CegNyilvantartas\CegSzerkesztesAblak.Designer.cs">
+      <DependentUpon>CegSzerkesztesAblak.cs</DependentUpon>
     </Compile>
     <Compile Include="src\StartupForm.cs">
       <SubType>Form</SubType>
@@ -162,24 +179,30 @@
     <Compile Include="src\XKROlvaso\KezeloAblak.Designer.cs">
       <DependentUpon>KezeloAblak.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\NevjegyPanel.cs">
+    <Compile Include="src\XKROlvaso\NevjegyPanel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\NevjegyPanel.Designer.cs">
+    <Compile Include="src\XKROlvaso\NevjegyPanel.Designer.cs">
       <DependentUpon>NevjegyPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\SQLHitelesito.cs" />
     <Compile Include="src\XKROlvaso\XmlKezelo.cs" />
+    <EmbeddedResource Include="src\Beallitasok\BeallitasokAblak.resx">
+      <DependentUpon>BeallitasokAblak.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\HitelesitoAblak.resx">
       <DependentUpon>HitelesitoAblak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Nyilvantartas\CegNyilvantartas\SzervezetiEgysegSzerkesztesAblak.resx">
+      <DependentUpon>SzervezetiEgysegSzerkesztesAblak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Nyilvantartas\NyilvantartasAblak.resx">
       <DependentUpon>NyilvantartasAblak.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Nyilvantartas\SzerkesztesAblak.resx">
-      <DependentUpon>SzerkesztesAblak.cs</DependentUpon>
+    <EmbeddedResource Include="src\Nyilvantartas\CegNyilvantartas\CegSzerkesztesAblak.resx">
+      <DependentUpon>CegSzerkesztesAblak.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\StartupForm.resx">
       <DependentUpon>StartupForm.cs</DependentUpon>
@@ -190,7 +213,7 @@
     <EmbeddedResource Include="src\XKROlvaso\KezeloAblak.resx">
       <DependentUpon>KezeloAblak.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\NevjegyPanel.resx">
+    <EmbeddedResource Include="src\XKROlvaso\NevjegyPanel.resx">
       <DependentUpon>NevjegyPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -277,6 +300,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\updates_picture_alt.png" />
     <None Include="Resources\updates_picture1.png" />
     <None Include="Resources\updates_picture.png" />
     <None Include="Resources\icon_add.png" />
@@ -287,6 +311,7 @@
     <None Include="Resources\icon_delete_alt.png" />
     <None Include="Resources\accounthelper.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
