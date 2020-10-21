@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace AccountHelper.src.Nyilvantartas
 {
@@ -12,8 +14,7 @@ namespace AccountHelper.src.Nyilvantartas
     {
         #region Variables
 
-        readonly static string work_Folder = Application.StartupPath + "/" + Program.cegek;
-        readonly static string szervezeti_egysegek_Folder = Program.szervezeti_egysegek;
+        //readonly static string work_Folder = Application.StartupPath + "/" + Program.cegek;
 
         public string Neve { get; set; }
         public string Sablon { get; set; }
@@ -28,63 +29,43 @@ namespace AccountHelper.src.Nyilvantartas
 
         #region Létrehozás metódus
 
-        public void Letrehoz()
+        public void Hozzaad(Ceg ceg)
         {
-            XmlWriterSettings settings = new XmlWriterSettings
-            {
-                Indent = true,
-                OmitXmlDeclaration = true,
-                NewLineOnAttributes = false
-            };
+            Console.WriteLine(ceg.path);
+            XDocument cegX = XDocument.Load(ceg.path);
 
-            XmlWriter writer = XmlWriter.Create(work_Folder + "/" + szervezeti_egysegek_Folder +  "/" + Neve + ".xml", settings);
+            List<XElement> elem = new List<XElement>();
 
-            //xml nyit
-            writer.WriteStartDocument();
-
-            writer.WriteStartElement("szervezeti_egyseg");
-            writer.WriteAttributeString("nev", Neve);
-
-            writer.WriteStartElement("sablon");
-            writer.WriteString(Sablon);
-            writer.WriteEndElement();
-
-            writer.WriteStartElement("mkidoKezd");
-            writer.WriteString(MkidoKezd);
-            writer.WriteEndElement();
-
-            writer.WriteStartElement("mkidoVege");
-            writer.WriteString(MkidoVege);
-            writer.WriteEndElement();
-
-            writer.WriteStartElement("mkSzunetek");
             for (int i = 0; i < MkSzunetek.Count; i++)
             {
-                writer.WriteStartElement("mkSzunet" + i);
-                writer.WriteAttributeString("kezdes", MkSzunetek[i][0]);
-                writer.WriteAttributeString("veg", MkSzunetek[i][1]);
-                writer.WriteEndElement();
+                if (MkSzunetek.ElementAt(i) == null) return;
+
+                elem.Add(new XElement("mkSzunet" + i, 
+                    new XAttribute("kezdes", (MkSzunetek[i])[0]), 
+                    new XAttribute("veg", (MkSzunetek[i])[1]), 
+                    new XAttribute("perc", (MkSzunetek[i])[2])));
             }
-            writer.WriteEndElement();
 
-            writer.WriteStartElement("napimkIdo");
-            writer.WriteString(NapimkIdo.ToString());
-            writer.WriteEndElement();
-
-            writer.WriteStartElement("mkSzunetNemResze");
-            writer.WriteAttributeString("ertek", MkSzunetNemResze ? "igaz" : "hamis");
-            writer.WriteEndElement();
-
-            writer.WriteStartElement("autoNyilvantartas");
-            writer.WriteAttributeString("ertek", AutoNyilvantartas ? "igaz" : "hamis");
-            writer.WriteEndElement();
+            //xml nyit
+            cegX.Root.Add(
+                new XElement("szervezeti_egyseg",
+                    new XAttribute("nev", Neve),
+                    new XElement("sablon", Sablon),
+                    new XElement("mkidoKezd", MkidoKezd),
+                    new XElement("mkidoVege", MkidoVege),
+                    new XElement("mkSzunetek", elem.Count > 0 ? elem : null),
+                    new XElement("napimkIdo", NapimkIdo.ToString()),
+                    new XElement("mkSzunetNemResze",
+                        new XAttribute("ertek", MkSzunetNemResze ? "igaz" : "hamis")),
+                    new XElement("autoNyilvantartas",
+                        new XAttribute("ertek", AutoNyilvantartas ? "igaz" : "hamis"))
+                    )
+            );
 
             //xml zár
-            writer.WriteEndElement();
-            writer.WriteEndDocument();
-            writer.Flush();
+            cegX.Save(ceg.path);
 
-            Console.WriteLine("szervezeti egyseg file created");
+            Console.WriteLine("szervezeti egyseg created");
         }
 
         #endregion

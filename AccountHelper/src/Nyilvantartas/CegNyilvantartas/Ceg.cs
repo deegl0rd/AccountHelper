@@ -15,20 +15,60 @@ namespace AccountHelper.src.Nyilvantartas
     {
         #region Változók
 
+        public List<SzervezetiEgyseg> SzervezetiEgysegek { get; set; }
+
         public static List<Ceg> lista;
 
         private static XmlDocument xml;
 
         readonly static string work_Folder = Application.StartupPath + "/" + Program.cegek;
 
-        public readonly string ceg_neve, szamlazasiNev, varos, cim,
+        public string ceg_neve, szamlazasiNev, varos, cim,
             levelezesi_varos, levelezesi_cim, cegjegyzekszam,
             cegAdoszam, cegTelefonszam, cegWeboldal;
-        public readonly int iranyitoszam, levelezesi_iranyitoszam;
+        public int iranyitoszam, levelezesi_iranyitoszam;
 
-        public readonly string path;
+        public string path;
 
-        public readonly string fajlNev;
+        public string fajlNev;
+
+        #endregion
+
+        #region Parser
+
+        private void Parser(XmlDocument xml)
+        {
+            //Cégneve
+            ceg_neve = xml.DocumentElement.GetAttribute("nev");
+
+            //Számlázási
+            szamlazasiNev = xml.GetElementsByTagName("szamlazasiNev").Item(0).InnerText;
+            varos = xml.GetElementsByTagName("varos").Item(0).InnerText;
+            cim = xml.GetElementsByTagName("cim").Item(0).InnerText;
+            iranyitoszam = int.Parse(xml.GetElementsByTagName("iranyitoszam").Item(0).InnerText);
+
+            //Levelezési
+            levelezesi_varos = xml.GetElementsByTagName("levelezesi_varos").Item(0).InnerText;
+            levelezesi_cim = xml.GetElementsByTagName("levelezesi_cim").Item(0).InnerText;
+            levelezesi_iranyitoszam = int.Parse(xml.GetElementsByTagName("levelezesi_iranyitoszam").Item(0).InnerText);
+
+            //Cégadatok
+            cegjegyzekszam = xml.GetElementsByTagName("cegjegyzekszam").Item(0).InnerText;
+            cegAdoszam = xml.GetElementsByTagName("cegAdoszam").Item(0).InnerText;
+            cegTelefonszam = xml.GetElementsByTagName("cegTelefonszam").Item(0).InnerText;
+            cegWeboldal = xml.GetElementsByTagName("cegWeboldal").Item(0).InnerText;
+        }
+
+        #endregion
+
+        #region Szervezeti egységek betöltése
+
+        public List<SzervezetiEgyseg> SzervezetiEgysegekBetoltese(XmlDocument xml)
+        {
+            SzervezetiEgysegek = new List<SzervezetiEgyseg>();
+
+            return SzervezetiEgysegek;
+        }
 
         #endregion
 
@@ -47,7 +87,7 @@ namespace AccountHelper.src.Nyilvantartas
         /// <param name="cegAdoszam"></param>
         /// <param name="cegTelefonszam"></param>
 
-        #region Konstruktor 1
+        #region Konstruktor LÉTREHOZÁSI
 
         public Ceg(string ceg_neve,
             string szamlazasiNev,
@@ -91,7 +131,7 @@ namespace AccountHelper.src.Nyilvantartas
         /// <param name="hely">Fájl elérési útvonala, fájlnév nélkül!</param>
         /// <param name="fajlNev">A fájl neve, kiterjesztéssel együtt!</param>
 
-        #region Konstruktor 2
+        #region Konstruktor HELY + FÁJLNÉV ALAPJÁN MEGNYIÍTÁS
         public Ceg(string hely, string fajlNev)
         {
             path = hely + "/" + fajlNev;
@@ -100,25 +140,7 @@ namespace AccountHelper.src.Nyilvantartas
             xml = new XmlDocument();
             xml.LoadXml(xmlContent);
 
-            //Cégneve
-            ceg_neve = xml.DocumentElement.GetAttribute("nev");
-
-            //Számlázási
-            szamlazasiNev = xml.GetElementsByTagName("szamlazasiNev").Item(0).InnerText;
-            varos = xml.GetElementsByTagName("varos").Item(0).InnerText;
-            cim = xml.GetElementsByTagName("cim").Item(0).InnerText;
-            iranyitoszam = int.Parse(xml.GetElementsByTagName("iranyitoszam").Item(0).InnerText);
-
-            //Levelezési
-            levelezesi_varos = xml.GetElementsByTagName("levelezesi_varos").Item(0).InnerText;
-            levelezesi_cim = xml.GetElementsByTagName("levelezesi_cim").Item(0).InnerText;
-            levelezesi_iranyitoszam = int.Parse(xml.GetElementsByTagName("levelezesi_iranyitoszam").Item(0).InnerText);
-
-            //Cégadatok
-            cegjegyzekszam = xml.GetElementsByTagName("cegjegyzekszam").Item(0).InnerText;
-            cegAdoszam = xml.GetElementsByTagName("cegAdoszam").Item(0).InnerText;
-            cegTelefonszam = xml.GetElementsByTagName("cegTelefonszam").Item(0).InnerText;
-            cegWeboldal = xml.GetElementsByTagName("cegWeboldal").Item(0).InnerText;
+            Parser(xml);
         }
 
         #endregion
@@ -128,7 +150,8 @@ namespace AccountHelper.src.Nyilvantartas
         /// </summary>
         /// <param name="utvonal">A fájl teljes útvonala</param>
 
-        #region Konstruktor 3
+        #region Konstruktor ABSZOLÚT HELY ALAPJÁN MEGNYITÁS
+
         public Ceg(string utvonal)
         {
             path = utvonal;
@@ -136,25 +159,7 @@ namespace AccountHelper.src.Nyilvantartas
             xml = new XmlDocument();
             xml.LoadXml(xmlContent);
 
-            //Cégneve
-            ceg_neve = xml.DocumentElement.GetAttribute("nev");
-
-            //Számlázási
-            szamlazasiNev = xml.GetElementsByTagName("szamlazasiNev").Item(0).InnerText;
-            varos = xml.GetElementsByTagName("varos").Item(0).InnerText;
-            cim = xml.GetElementsByTagName("cim").Item(0).InnerText;
-            iranyitoszam = int.Parse(xml.GetElementsByTagName("iranyitoszam").Item(0).InnerText);
-
-            //Levelezési
-            levelezesi_varos = xml.GetElementsByTagName("levelezesi_varos").Item(0).InnerText;
-            levelezesi_cim = xml.GetElementsByTagName("levelezesi_cim").Item(0).InnerText;
-            levelezesi_iranyitoszam = int.Parse(xml.GetElementsByTagName("levelezesi_iranyitoszam").Item(0).InnerText);
-
-            //Cégadatok
-            cegjegyzekszam = xml.GetElementsByTagName("cegjegyzekszam").Item(0).InnerText;
-            cegAdoszam = xml.GetElementsByTagName("cegAdoszam").Item(0).InnerText;
-            cegTelefonszam = xml.GetElementsByTagName("cegTelefonszam").Item(0).InnerText;
-            cegWeboldal = xml.GetElementsByTagName("cegWeboldal").Item(0).InnerText;
+            Parser(xml);
         }
 
         #endregion

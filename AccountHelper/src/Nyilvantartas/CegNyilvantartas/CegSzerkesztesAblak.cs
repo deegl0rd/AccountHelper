@@ -32,7 +32,11 @@ namespace AccountHelper.src.Nyilvantartas
                 string.IsNullOrEmpty(levelezesiIranyitoszam_doboz.Text) ||
                 string.IsNullOrEmpty(cegjegyzekszam_doboz1.Text) || string.IsNullOrEmpty(cegjegyzekszam_doboz2.Text) || string.IsNullOrEmpty(cegjegyzekszam_doboz3.Text) ||
                 string.IsNullOrEmpty(cegAdoszam_doboz1.Text) || string.IsNullOrEmpty(cegAdoszam_doboz2.Text) || string.IsNullOrEmpty(cegAdoszam_doboz3.Text) ||
-                string.IsNullOrEmpty(cegTelefonszam_doboz1.Text) || string.IsNullOrEmpty(cegTelefonszam_doboz2.Text)) return true;
+                string.IsNullOrEmpty(cegTelefonszam_doboz1.Text) || string.IsNullOrEmpty(cegTelefonszam_doboz2.Text))
+            {
+                MessageBox.Show(null, "Fontos mező ki lett hagyva!", "Hiányzó mezők", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
             return false;
         }
 
@@ -144,11 +148,7 @@ namespace AccountHelper.src.Nyilvantartas
                 );
 
 
-            if (HaUres())
-            {
-                MessageBox.Show(null, "Fontos mező ki lett hagyva!", "Hiányzó mezők", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            if (HaUres()) return;
 
             letrehozottCeg.Letrehoz();
 
@@ -158,11 +158,7 @@ namespace AccountHelper.src.Nyilvantartas
 
         private void Valtoztat()
         {
-            if (HaUres())
-            {
-                MessageBox.Show(null, "Fontos mező ki lett hagyva!", "Hiányzó mezők", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            if (HaUres()) return;
 
             megnyitottCeg.Valtoztat(
                 cegNeve_Doboz.Text,

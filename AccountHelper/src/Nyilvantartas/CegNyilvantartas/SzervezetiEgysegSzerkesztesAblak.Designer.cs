@@ -1,4 +1,6 @@
-﻿namespace AccountHelper.src.Nyilvantartas
+﻿using System.Windows.Forms;
+
+namespace AccountHelper.src.Nyilvantartas
 {
     partial class SzervezetiEgysegSzerkesztesAblak
     {
@@ -18,6 +20,18 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        private void haNemSzam(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
         }
 
         #region Windows Form Designer generated code
@@ -45,35 +59,23 @@
             this.mkSzunet4_perc_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.szoveg_ig4 = new System.Windows.Forms.Label();
             this.szoveg_tol4 = new System.Windows.Forms.Label();
-            this.mkSzunet4_ig_SzamValaszto = new System.Windows.Forms.NumericUpDown();
-            this.mkSzunet4_tol_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.szoveg_perc3 = new System.Windows.Forms.Label();
             this.pipa_szunet3 = new System.Windows.Forms.CheckBox();
             this.mkSzunet3_perc_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.szoveg_ig3 = new System.Windows.Forms.Label();
             this.szoveg_tol3 = new System.Windows.Forms.Label();
-            this.mkSzunet3_ig_SzamValaszto = new System.Windows.Forms.NumericUpDown();
-            this.mkSzunet3_tol_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.szoveg_perc2 = new System.Windows.Forms.Label();
             this.pipa_szunet2 = new System.Windows.Forms.CheckBox();
             this.mkSzunet2_perc_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.szoveg_ig2 = new System.Windows.Forms.Label();
             this.szoveg_tol2 = new System.Windows.Forms.Label();
-            this.mkSzunet2_ig_SzamValaszto = new System.Windows.Forms.NumericUpDown();
-            this.mkSzunet2_tol_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.szoveg_perc1 = new System.Windows.Forms.Label();
             this.pipa_szunet1 = new System.Windows.Forms.CheckBox();
             this.mkSzunet1_perc_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.szoveg_ig1 = new System.Windows.Forms.Label();
             this.szoveg_tol1 = new System.Windows.Forms.Label();
-            this.mkSzunet1_ig_SzamValaszto = new System.Windows.Forms.NumericUpDown();
-            this.mkSzunet1_tol_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.szoveg_kettospont2 = new System.Windows.Forms.Label();
-            this.mkVege_perc_SzamValaszto = new System.Windows.Forms.NumericUpDown();
-            this.mkVege_ora_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.szoveg_kettospont1 = new System.Windows.Forms.Label();
-            this.mkKezdete_perc_SzamValaszto = new System.Windows.Forms.NumericUpDown();
-            this.mkKezdete_ora_SzamValaszto = new System.Windows.Forms.NumericUpDown();
             this.munkaRendSablon_valaszto = new System.Windows.Forms.ComboBox();
             this.mkSzunetekSzoveg = new System.Windows.Forms.Label();
             this.munkaIdoVegeSzoveg = new System.Windows.Forms.Label();
@@ -81,24 +83,24 @@
             this.mkRendSablonSzoveg = new System.Windows.Forms.Label();
             this.megseGomb = new System.Windows.Forms.Button();
             this.mentesGomb = new System.Windows.Forms.Button();
+            this.mkKezdete_ora_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkKezdete_perc_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkVege_ora_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkVege_perc_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkSzunet1_tol_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkSzunet1_ig_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkSzunet2_ig_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkSzunet2_tol_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkSzunet3_ig_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkSzunet3_tol_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkSzunet4_ig_SzamValaszto = new System.Windows.Forms.TextBox();
+            this.mkSzunet4_tol_SzamValaszto = new System.Windows.Forms.TextBox();
             this.csoport_beallitasok.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.napiMunkaIdo_SzamValaszto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mkSzunet4_perc_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet4_ig_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet4_tol_SzamValaszto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mkSzunet3_perc_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet3_ig_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet3_tol_SzamValaszto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mkSzunet2_perc_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet2_ig_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet2_tol_SzamValaszto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mkSzunet1_perc_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet1_ig_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet1_tol_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkVege_perc_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkVege_ora_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkKezdete_perc_SzamValaszto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkKezdete_ora_SzamValaszto)).BeginInit();
             this.SuspendLayout();
             // 
             // cegNeve_Doboz
@@ -132,6 +134,18 @@
             // csoport_beallitasok
             // 
             this.csoport_beallitasok.BackColor = System.Drawing.Color.White;
+            this.csoport_beallitasok.Controls.Add(this.mkSzunet4_ig_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkSzunet4_tol_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkSzunet3_ig_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkSzunet3_tol_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkSzunet2_ig_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkSzunet2_tol_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkSzunet1_ig_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkSzunet1_tol_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkVege_perc_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkVege_ora_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkKezdete_perc_SzamValaszto);
+            this.csoport_beallitasok.Controls.Add(this.mkKezdete_ora_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.pipa_autoNyilvanTartas);
             this.csoport_beallitasok.Controls.Add(this.pipa_munkakoziSzunetNemResze);
             this.csoport_beallitasok.Controls.Add(this.autoNyilvanTartasSzoveg);
@@ -144,35 +158,23 @@
             this.csoport_beallitasok.Controls.Add(this.mkSzunet4_perc_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.szoveg_ig4);
             this.csoport_beallitasok.Controls.Add(this.szoveg_tol4);
-            this.csoport_beallitasok.Controls.Add(this.mkSzunet4_ig_SzamValaszto);
-            this.csoport_beallitasok.Controls.Add(this.mkSzunet4_tol_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.szoveg_perc3);
             this.csoport_beallitasok.Controls.Add(this.pipa_szunet3);
             this.csoport_beallitasok.Controls.Add(this.mkSzunet3_perc_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.szoveg_ig3);
             this.csoport_beallitasok.Controls.Add(this.szoveg_tol3);
-            this.csoport_beallitasok.Controls.Add(this.mkSzunet3_ig_SzamValaszto);
-            this.csoport_beallitasok.Controls.Add(this.mkSzunet3_tol_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.szoveg_perc2);
             this.csoport_beallitasok.Controls.Add(this.pipa_szunet2);
             this.csoport_beallitasok.Controls.Add(this.mkSzunet2_perc_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.szoveg_ig2);
             this.csoport_beallitasok.Controls.Add(this.szoveg_tol2);
-            this.csoport_beallitasok.Controls.Add(this.mkSzunet2_ig_SzamValaszto);
-            this.csoport_beallitasok.Controls.Add(this.mkSzunet2_tol_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.szoveg_perc1);
             this.csoport_beallitasok.Controls.Add(this.pipa_szunet1);
             this.csoport_beallitasok.Controls.Add(this.mkSzunet1_perc_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.szoveg_ig1);
             this.csoport_beallitasok.Controls.Add(this.szoveg_tol1);
-            this.csoport_beallitasok.Controls.Add(this.mkSzunet1_ig_SzamValaszto);
-            this.csoport_beallitasok.Controls.Add(this.mkSzunet1_tol_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.szoveg_kettospont2);
-            this.csoport_beallitasok.Controls.Add(this.mkVege_perc_SzamValaszto);
-            this.csoport_beallitasok.Controls.Add(this.mkVege_ora_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.szoveg_kettospont1);
-            this.csoport_beallitasok.Controls.Add(this.mkKezdete_perc_SzamValaszto);
-            this.csoport_beallitasok.Controls.Add(this.mkKezdete_ora_SzamValaszto);
             this.csoport_beallitasok.Controls.Add(this.munkaRendSablon_valaszto);
             this.csoport_beallitasok.Controls.Add(this.mkSzunetekSzoveg);
             this.csoport_beallitasok.Controls.Add(this.munkaIdoVegeSzoveg);
@@ -242,6 +244,11 @@
             this.napiMunkaIdo_SzamValaszto.Name = "napiMunkaIdo_SzamValaszto";
             this.napiMunkaIdo_SzamValaszto.Size = new System.Drawing.Size(48, 24);
             this.napiMunkaIdo_SzamValaszto.TabIndex = 51;
+            this.napiMunkaIdo_SzamValaszto.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             // 
             // napiMunkaIdoSzoveg
             // 
@@ -281,6 +288,11 @@
             this.mkSzunet4_perc_SzamValaszto.Name = "mkSzunet4_perc_SzamValaszto";
             this.mkSzunet4_perc_SzamValaszto.Size = new System.Drawing.Size(48, 24);
             this.mkSzunet4_perc_SzamValaszto.TabIndex = 47;
+            this.mkSzunet4_perc_SzamValaszto.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             // 
             // szoveg_ig4
             // 
@@ -301,30 +313,6 @@
             this.szoveg_tol4.Size = new System.Drawing.Size(29, 20);
             this.szoveg_tol4.TabIndex = 45;
             this.szoveg_tol4.Text = "-től";
-            // 
-            // mkSzunet4_ig_SzamValaszto
-            // 
-            this.mkSzunet4_ig_SzamValaszto.Location = new System.Drawing.Point(303, 245);
-            this.mkSzunet4_ig_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkSzunet4_ig_SzamValaszto.Name = "mkSzunet4_ig_SzamValaszto";
-            this.mkSzunet4_ig_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkSzunet4_ig_SzamValaszto.TabIndex = 44;
-            // 
-            // mkSzunet4_tol_SzamValaszto
-            // 
-            this.mkSzunet4_tol_SzamValaszto.Location = new System.Drawing.Point(214, 245);
-            this.mkSzunet4_tol_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkSzunet4_tol_SzamValaszto.Name = "mkSzunet4_tol_SzamValaszto";
-            this.mkSzunet4_tol_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkSzunet4_tol_SzamValaszto.TabIndex = 43;
             // 
             // szoveg_perc3
             // 
@@ -355,6 +343,11 @@
             this.mkSzunet3_perc_SzamValaszto.Name = "mkSzunet3_perc_SzamValaszto";
             this.mkSzunet3_perc_SzamValaszto.Size = new System.Drawing.Size(48, 24);
             this.mkSzunet3_perc_SzamValaszto.TabIndex = 40;
+            this.mkSzunet3_perc_SzamValaszto.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             // 
             // szoveg_ig3
             // 
@@ -375,30 +368,6 @@
             this.szoveg_tol3.Size = new System.Drawing.Size(29, 20);
             this.szoveg_tol3.TabIndex = 38;
             this.szoveg_tol3.Text = "-től";
-            // 
-            // mkSzunet3_ig_SzamValaszto
-            // 
-            this.mkSzunet3_ig_SzamValaszto.Location = new System.Drawing.Point(303, 215);
-            this.mkSzunet3_ig_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkSzunet3_ig_SzamValaszto.Name = "mkSzunet3_ig_SzamValaszto";
-            this.mkSzunet3_ig_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkSzunet3_ig_SzamValaszto.TabIndex = 37;
-            // 
-            // mkSzunet3_tol_SzamValaszto
-            // 
-            this.mkSzunet3_tol_SzamValaszto.Location = new System.Drawing.Point(214, 215);
-            this.mkSzunet3_tol_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkSzunet3_tol_SzamValaszto.Name = "mkSzunet3_tol_SzamValaszto";
-            this.mkSzunet3_tol_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkSzunet3_tol_SzamValaszto.TabIndex = 36;
             // 
             // szoveg_perc2
             // 
@@ -429,6 +398,11 @@
             this.mkSzunet2_perc_SzamValaszto.Name = "mkSzunet2_perc_SzamValaszto";
             this.mkSzunet2_perc_SzamValaszto.Size = new System.Drawing.Size(48, 24);
             this.mkSzunet2_perc_SzamValaszto.TabIndex = 33;
+            this.mkSzunet2_perc_SzamValaszto.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             // 
             // szoveg_ig2
             // 
@@ -449,30 +423,6 @@
             this.szoveg_tol2.Size = new System.Drawing.Size(29, 20);
             this.szoveg_tol2.TabIndex = 31;
             this.szoveg_tol2.Text = "-től";
-            // 
-            // mkSzunet2_ig_SzamValaszto
-            // 
-            this.mkSzunet2_ig_SzamValaszto.Location = new System.Drawing.Point(303, 185);
-            this.mkSzunet2_ig_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkSzunet2_ig_SzamValaszto.Name = "mkSzunet2_ig_SzamValaszto";
-            this.mkSzunet2_ig_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkSzunet2_ig_SzamValaszto.TabIndex = 30;
-            // 
-            // mkSzunet2_tol_SzamValaszto
-            // 
-            this.mkSzunet2_tol_SzamValaszto.Location = new System.Drawing.Point(214, 185);
-            this.mkSzunet2_tol_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkSzunet2_tol_SzamValaszto.Name = "mkSzunet2_tol_SzamValaszto";
-            this.mkSzunet2_tol_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkSzunet2_tol_SzamValaszto.TabIndex = 29;
             // 
             // szoveg_perc1
             // 
@@ -503,6 +453,11 @@
             this.mkSzunet1_perc_SzamValaszto.Name = "mkSzunet1_perc_SzamValaszto";
             this.mkSzunet1_perc_SzamValaszto.Size = new System.Drawing.Size(48, 24);
             this.mkSzunet1_perc_SzamValaszto.TabIndex = 26;
+            this.mkSzunet1_perc_SzamValaszto.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
             // 
             // szoveg_ig1
             // 
@@ -524,30 +479,6 @@
             this.szoveg_tol1.TabIndex = 24;
             this.szoveg_tol1.Text = "-től";
             // 
-            // mkSzunet1_ig_SzamValaszto
-            // 
-            this.mkSzunet1_ig_SzamValaszto.Location = new System.Drawing.Point(303, 155);
-            this.mkSzunet1_ig_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkSzunet1_ig_SzamValaszto.Name = "mkSzunet1_ig_SzamValaszto";
-            this.mkSzunet1_ig_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkSzunet1_ig_SzamValaszto.TabIndex = 23;
-            // 
-            // mkSzunet1_tol_SzamValaszto
-            // 
-            this.mkSzunet1_tol_SzamValaszto.Location = new System.Drawing.Point(214, 155);
-            this.mkSzunet1_tol_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkSzunet1_tol_SzamValaszto.Name = "mkSzunet1_tol_SzamValaszto";
-            this.mkSzunet1_tol_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkSzunet1_tol_SzamValaszto.TabIndex = 22;
-            // 
             // szoveg_kettospont2
             // 
             this.szoveg_kettospont2.AutoSize = true;
@@ -557,30 +488,6 @@
             this.szoveg_kettospont2.Size = new System.Drawing.Size(13, 20);
             this.szoveg_kettospont2.TabIndex = 21;
             this.szoveg_kettospont2.Text = ":";
-            // 
-            // mkVege_perc_SzamValaszto
-            // 
-            this.mkVege_perc_SzamValaszto.Location = new System.Drawing.Point(257, 116);
-            this.mkVege_perc_SzamValaszto.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.mkVege_perc_SzamValaszto.Name = "mkVege_perc_SzamValaszto";
-            this.mkVege_perc_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkVege_perc_SzamValaszto.TabIndex = 20;
-            // 
-            // mkVege_ora_SzamValaszto
-            // 
-            this.mkVege_ora_SzamValaszto.Location = new System.Drawing.Point(184, 116);
-            this.mkVege_ora_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkVege_ora_SzamValaszto.Name = "mkVege_ora_SzamValaszto";
-            this.mkVege_ora_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkVege_ora_SzamValaszto.TabIndex = 19;
             // 
             // szoveg_kettospont1
             // 
@@ -592,32 +499,9 @@
             this.szoveg_kettospont1.TabIndex = 18;
             this.szoveg_kettospont1.Text = ":";
             // 
-            // mkKezdete_perc_SzamValaszto
-            // 
-            this.mkKezdete_perc_SzamValaszto.Location = new System.Drawing.Point(257, 77);
-            this.mkKezdete_perc_SzamValaszto.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.mkKezdete_perc_SzamValaszto.Name = "mkKezdete_perc_SzamValaszto";
-            this.mkKezdete_perc_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkKezdete_perc_SzamValaszto.TabIndex = 17;
-            // 
-            // mkKezdete_ora_SzamValaszto
-            // 
-            this.mkKezdete_ora_SzamValaszto.Location = new System.Drawing.Point(184, 77);
-            this.mkKezdete_ora_SzamValaszto.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.mkKezdete_ora_SzamValaszto.Name = "mkKezdete_ora_SzamValaszto";
-            this.mkKezdete_ora_SzamValaszto.Size = new System.Drawing.Size(48, 24);
-            this.mkKezdete_ora_SzamValaszto.TabIndex = 16;
-            // 
             // munkaRendSablon_valaszto
             // 
+            this.munkaRendSablon_valaszto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.munkaRendSablon_valaszto.FormattingEnabled = true;
             this.munkaRendSablon_valaszto.Items.AddRange(new object[] {
             "általános",
@@ -690,6 +574,102 @@
             this.mentesGomb.UseVisualStyleBackColor = false;
             this.mentesGomb.Click += new System.EventHandler(this.MentesGomb_Click);
             // 
+            // mkKezdete_ora_SzamValaszto
+            // 
+            this.mkKezdete_ora_SzamValaszto.Location = new System.Drawing.Point(184, 76);
+            this.mkKezdete_ora_SzamValaszto.MaxLength = 2;
+            this.mkKezdete_ora_SzamValaszto.Name = "mkKezdete_ora_SzamValaszto";
+            this.mkKezdete_ora_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkKezdete_ora_SzamValaszto.TabIndex = 57;
+            // 
+            // mkKezdete_perc_SzamValaszto
+            // 
+            this.mkKezdete_perc_SzamValaszto.Location = new System.Drawing.Point(257, 76);
+            this.mkKezdete_perc_SzamValaszto.MaxLength = 2;
+            this.mkKezdete_perc_SzamValaszto.Name = "mkKezdete_perc_SzamValaszto";
+            this.mkKezdete_perc_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkKezdete_perc_SzamValaszto.TabIndex = 58;
+            // 
+            // mkVege_ora_SzamValaszto
+            // 
+            this.mkVege_ora_SzamValaszto.Location = new System.Drawing.Point(184, 115);
+            this.mkVege_ora_SzamValaszto.MaxLength = 2;
+            this.mkVege_ora_SzamValaszto.Name = "mkVege_ora_SzamValaszto";
+            this.mkVege_ora_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkVege_ora_SzamValaszto.TabIndex = 59;
+            // 
+            // mkVege_perc_SzamValaszto
+            // 
+            this.mkVege_perc_SzamValaszto.Location = new System.Drawing.Point(257, 115);
+            this.mkVege_perc_SzamValaszto.MaxLength = 2;
+            this.mkVege_perc_SzamValaszto.Name = "mkVege_perc_SzamValaszto";
+            this.mkVege_perc_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkVege_perc_SzamValaszto.TabIndex = 60;
+            // 
+            // mkSzunet1_tol_SzamValaszto
+            // 
+            this.mkSzunet1_tol_SzamValaszto.Location = new System.Drawing.Point(214, 155);
+            this.mkSzunet1_tol_SzamValaszto.MaxLength = 2;
+            this.mkSzunet1_tol_SzamValaszto.Name = "mkSzunet1_tol_SzamValaszto";
+            this.mkSzunet1_tol_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkSzunet1_tol_SzamValaszto.TabIndex = 61;
+            // 
+            // mkSzunet1_ig_SzamValaszto
+            // 
+            this.mkSzunet1_ig_SzamValaszto.Location = new System.Drawing.Point(303, 155);
+            this.mkSzunet1_ig_SzamValaszto.MaxLength = 2;
+            this.mkSzunet1_ig_SzamValaszto.Name = "mkSzunet1_ig_SzamValaszto";
+            this.mkSzunet1_ig_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkSzunet1_ig_SzamValaszto.TabIndex = 62;
+            // 
+            // mkSzunet2_ig_SzamValaszto
+            // 
+            this.mkSzunet2_ig_SzamValaszto.Location = new System.Drawing.Point(303, 185);
+            this.mkSzunet2_ig_SzamValaszto.MaxLength = 2;
+            this.mkSzunet2_ig_SzamValaszto.Name = "mkSzunet2_ig_SzamValaszto";
+            this.mkSzunet2_ig_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkSzunet2_ig_SzamValaszto.TabIndex = 64;
+            // 
+            // mkSzunet2_tol_SzamValaszto
+            // 
+            this.mkSzunet2_tol_SzamValaszto.Location = new System.Drawing.Point(214, 185);
+            this.mkSzunet2_tol_SzamValaszto.MaxLength = 2;
+            this.mkSzunet2_tol_SzamValaszto.Name = "mkSzunet2_tol_SzamValaszto";
+            this.mkSzunet2_tol_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkSzunet2_tol_SzamValaszto.TabIndex = 63;
+            // 
+            // mkSzunet3_ig_SzamValaszto
+            // 
+            this.mkSzunet3_ig_SzamValaszto.Location = new System.Drawing.Point(303, 215);
+            this.mkSzunet3_ig_SzamValaszto.MaxLength = 2;
+            this.mkSzunet3_ig_SzamValaszto.Name = "mkSzunet3_ig_SzamValaszto";
+            this.mkSzunet3_ig_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkSzunet3_ig_SzamValaszto.TabIndex = 66;
+            // 
+            // mkSzunet3_tol_SzamValaszto
+            // 
+            this.mkSzunet3_tol_SzamValaszto.Location = new System.Drawing.Point(214, 215);
+            this.mkSzunet3_tol_SzamValaszto.MaxLength = 2;
+            this.mkSzunet3_tol_SzamValaszto.Name = "mkSzunet3_tol_SzamValaszto";
+            this.mkSzunet3_tol_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkSzunet3_tol_SzamValaszto.TabIndex = 65;
+            // 
+            // mkSzunet4_ig_SzamValaszto
+            // 
+            this.mkSzunet4_ig_SzamValaszto.Location = new System.Drawing.Point(303, 244);
+            this.mkSzunet4_ig_SzamValaszto.MaxLength = 2;
+            this.mkSzunet4_ig_SzamValaszto.Name = "mkSzunet4_ig_SzamValaszto";
+            this.mkSzunet4_ig_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkSzunet4_ig_SzamValaszto.TabIndex = 68;
+            // 
+            // mkSzunet4_tol_SzamValaszto
+            // 
+            this.mkSzunet4_tol_SzamValaszto.Location = new System.Drawing.Point(214, 244);
+            this.mkSzunet4_tol_SzamValaszto.MaxLength = 2;
+            this.mkSzunet4_tol_SzamValaszto.Name = "mkSzunet4_tol_SzamValaszto";
+            this.mkSzunet4_tol_SzamValaszto.Size = new System.Drawing.Size(48, 24);
+            this.mkSzunet4_tol_SzamValaszto.TabIndex = 67;
+            // 
             // SzervezetiEgysegSzerkesztesAblak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -713,21 +693,9 @@
             this.csoport_beallitasok.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.napiMunkaIdo_SzamValaszto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mkSzunet4_perc_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet4_ig_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet4_tol_SzamValaszto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mkSzunet3_perc_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet3_ig_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet3_tol_SzamValaszto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mkSzunet2_perc_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet2_ig_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet2_tol_SzamValaszto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mkSzunet1_perc_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet1_ig_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkSzunet1_tol_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkVege_perc_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkVege_ora_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkKezdete_perc_SzamValaszto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mkKezdete_ora_SzamValaszto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -741,41 +709,29 @@
         private System.Windows.Forms.GroupBox csoport_beallitasok;
         private System.Windows.Forms.Label szoveg_ig1;
         private System.Windows.Forms.Label szoveg_tol1;
-        private System.Windows.Forms.NumericUpDown mkSzunet1_tol_SzamValaszto;
         private System.Windows.Forms.Label szoveg_kettospont2;
-        private System.Windows.Forms.NumericUpDown mkVege_perc_SzamValaszto;
-        private System.Windows.Forms.NumericUpDown mkVege_ora_SzamValaszto;
         private System.Windows.Forms.Label szoveg_kettospont1;
-        private System.Windows.Forms.NumericUpDown mkKezdete_perc_SzamValaszto;
-        private System.Windows.Forms.NumericUpDown mkKezdete_ora_SzamValaszto;
         private System.Windows.Forms.ComboBox munkaRendSablon_valaszto;
         private System.Windows.Forms.Label mkSzunetekSzoveg;
         private System.Windows.Forms.Label munkaIdoVegeSzoveg;
         private System.Windows.Forms.Label munkaIdoKezdeteSzoveg;
         private System.Windows.Forms.Label mkRendSablonSzoveg;
         private System.Windows.Forms.NumericUpDown mkSzunet1_perc_SzamValaszto;
-        private System.Windows.Forms.NumericUpDown mkSzunet1_ig_SzamValaszto;
         private System.Windows.Forms.Label szoveg_perc4;
         private System.Windows.Forms.CheckBox pipa_szunet4;
         private System.Windows.Forms.NumericUpDown mkSzunet4_perc_SzamValaszto;
         private System.Windows.Forms.Label szoveg_ig4;
         private System.Windows.Forms.Label szoveg_tol4;
-        private System.Windows.Forms.NumericUpDown mkSzunet4_ig_SzamValaszto;
-        private System.Windows.Forms.NumericUpDown mkSzunet4_tol_SzamValaszto;
         private System.Windows.Forms.Label szoveg_perc3;
         private System.Windows.Forms.CheckBox pipa_szunet3;
         private System.Windows.Forms.NumericUpDown mkSzunet3_perc_SzamValaszto;
         private System.Windows.Forms.Label szoveg_ig3;
         private System.Windows.Forms.Label szoveg_tol3;
-        private System.Windows.Forms.NumericUpDown mkSzunet3_ig_SzamValaszto;
-        private System.Windows.Forms.NumericUpDown mkSzunet3_tol_SzamValaszto;
         private System.Windows.Forms.Label szoveg_perc2;
         private System.Windows.Forms.CheckBox pipa_szunet2;
         private System.Windows.Forms.NumericUpDown mkSzunet2_perc_SzamValaszto;
         private System.Windows.Forms.Label szoveg_ig2;
         private System.Windows.Forms.Label szoveg_tol2;
-        private System.Windows.Forms.NumericUpDown mkSzunet2_ig_SzamValaszto;
-        private System.Windows.Forms.NumericUpDown mkSzunet2_tol_SzamValaszto;
         private System.Windows.Forms.Label szoveg_perc1;
         private System.Windows.Forms.CheckBox pipa_szunet1;
         private System.Windows.Forms.Label szoveg_ora;
@@ -787,5 +743,17 @@
         private System.Windows.Forms.Label mkSzunetNemReszeSzoveg;
         private System.Windows.Forms.Button megseGomb;
         private System.Windows.Forms.Button mentesGomb;
+        private TextBox mkVege_perc_SzamValaszto;
+        private TextBox mkVege_ora_SzamValaszto;
+        private TextBox mkKezdete_perc_SzamValaszto;
+        private TextBox mkKezdete_ora_SzamValaszto;
+        private TextBox mkSzunet4_ig_SzamValaszto;
+        private TextBox mkSzunet4_tol_SzamValaszto;
+        private TextBox mkSzunet3_ig_SzamValaszto;
+        private TextBox mkSzunet3_tol_SzamValaszto;
+        private TextBox mkSzunet2_ig_SzamValaszto;
+        private TextBox mkSzunet2_tol_SzamValaszto;
+        private TextBox mkSzunet1_ig_SzamValaszto;
+        private TextBox mkSzunet1_tol_SzamValaszto;
     }
 }

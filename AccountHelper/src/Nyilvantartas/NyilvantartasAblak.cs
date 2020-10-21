@@ -93,10 +93,11 @@ namespace AccountHelper.src.Nyilvantartas
 
         private void CegLista_MouseClick(object sender, MouseEventArgs e)
         {
-            if (cegLista.FocusedItem.Bounds.Contains(e.Location))
-            {
-                tartalomDoboz.Text = File.ReadAllText(cegLista.FocusedItem.Tag.ToString());
-            }
+            if (!cegLista.FocusedItem.Bounds.Contains(e.Location)) return;
+
+            tartalomDoboz.Text = File.ReadAllText(cegLista.FocusedItem.Tag.ToString());
+
+
         }
 
         private void Szerv_torlesGomb_Click(object sender, EventArgs e)
@@ -106,7 +107,14 @@ namespace AccountHelper.src.Nyilvantartas
 
         private void Szerv_hozzadasGomb_Click(object sender, EventArgs e)
         {
+            if (cegLista.SelectedItems.Count > 1 || cegLista.SelectedItems.Count == 0) return;
+
             SzervezetiEgysegSzerkesztesAblak.code = false;
+            foreach (ListViewItem item in cegLista.SelectedItems)
+            {
+                SzervezetiEgysegSzerkesztesAblak.kivalasztottCegUtvonala = item.Tag.ToString();
+            }
+
             Program.SzervezetiEgysegSzerkesztesAblak.ShowDialog();
         }
     }
