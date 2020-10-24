@@ -60,7 +60,7 @@ namespace AccountHelper.src.Nyilvantartas
             if (pipa_szunet4.Checked) letrehozott.MkSzunetek.Add(
                 new string[] { mkSzunet4_tol_SzamValaszto.Text, mkSzunet4_ig_SzamValaszto.Text, mkSzunet4_perc_SzamValaszto.Value.ToString() });
 
-            letrehozott.Hozzaad(ceg);
+            letrehozott.Letrehoz(ceg);
 
             Hide();
             NyilvantartasAblak.formInstance.Frissites();

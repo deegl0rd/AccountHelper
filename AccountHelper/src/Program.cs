@@ -77,7 +77,6 @@ namespace AccountHelper.src
             {
                 temp,
                 cegek,
-                alkalmazottak
             };
 
             foreach (string mappa in mappak)

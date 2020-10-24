@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace AccountHelper.src.Nyilvantartas
 {
@@ -28,9 +29,23 @@ namespace AccountHelper.src.Nyilvantartas
             cegAdoszam, cegTelefonszam, cegWeboldal;
         public int iranyitoszam, levelezesi_iranyitoszam;
 
-        public string path;
+        public string filepath;
 
         public string fajlNev;
+
+        #region Szervezeti egység betöltési változók
+
+        string szerv_neve, szerv_sablon, szerv_mkidoKezd, szerv_mkidoVege;
+
+        XmlNodeList szerv_mkSzunetek;
+
+        List<string[]> szervek_atalakitva;
+
+        int szerv_napimkIdo;
+
+        bool szerv_mkSzunetNemResze, szerv_autoNyilvantartas;
+
+        #endregion
 
         #endregion
 
@@ -63,14 +78,14 @@ namespace AccountHelper.src.Nyilvantartas
 
         #region Szervezeti egységek betöltése
 
-        public List<SzervezetiEgyseg> SzervezetiEgysegekBetoltese(XmlDocument xml)
+        public void SzervezetiEgysegekBetoltese()
         {
-            SzervezetiEgysegek = new List<SzervezetiEgyseg>();
 
-            return SzervezetiEgysegek;
         }
 
         #endregion
+
+        #region Konstruktorok
 
         /// <summary>
         /// Konstruktor 1 mezők
@@ -134,12 +149,15 @@ namespace AccountHelper.src.Nyilvantartas
         #region Konstruktor HELY + FÁJLNÉV ALAPJÁN MEGNYIÍTÁS
         public Ceg(string hely, string fajlNev)
         {
-            path = hely + "/" + fajlNev;
+            filepath = hely + "/" + fajlNev;
             this.fajlNev = fajlNev;
             string xmlContent = File.ReadAllText(hely + "/" + fajlNev);
             xml = new XmlDocument();
             xml.LoadXml(xmlContent);
 
+            if (SzervezetiEgysegek == null) SzervezetiEgysegek = new List<SzervezetiEgyseg>();
+
+            SzervezetiEgysegBetoltes();
             Parser(xml);
         }
 
@@ -154,13 +172,18 @@ namespace AccountHelper.src.Nyilvantartas
 
         public Ceg(string utvonal)
         {
-            path = utvonal;
+            filepath = utvonal;
             string xmlContent = File.ReadAllText(utvonal);
             xml = new XmlDocument();
             xml.LoadXml(xmlContent);
 
+            if (SzervezetiEgysegek == null) SzervezetiEgysegek = new List<SzervezetiEgyseg>();
+
+            SzervezetiEgysegBetoltes();
             Parser(xml);
         }
+
+        #endregion
 
         #endregion
 
@@ -268,7 +291,7 @@ namespace AccountHelper.src.Nyilvantartas
             string cegWeboldal)
         {
             XmlDocument xml = new XmlDocument();
-            xml.LoadXml(File.ReadAllText(path));
+            xml.LoadXml(File.ReadAllText(filepath));
 
             xml.GetElementsByTagName("ceg")[0].Attributes[0].InnerText = ceg_neve;
             xml.GetElementsByTagName("szamlazasiNev")[0].InnerText = szamlazasiNev;
@@ -283,7 +306,7 @@ namespace AccountHelper.src.Nyilvantartas
             xml.GetElementsByTagName("cegTelefonszam")[0].InnerText = cegTelefonszam;
             xml.GetElementsByTagName("cegWeboldal")[0].InnerText = cegWeboldal;
 
-            xml.Save(path);
+            xml.Save(filepath);
 
             Console.WriteLine("file modified and saved");
         }
@@ -305,6 +328,93 @@ namespace AccountHelper.src.Nyilvantartas
             }
 
             return lista;
+        }
+
+        #endregion
+
+        #region Szervezeti egység Betöltése
+
+        private void SzervezetiEgysegBetoltes()
+        {
+            if (SzervezetiEgysegek == null) SzervezetiEgysegek = new List<SzervezetiEgyseg>();
+
+            XmlDocument xml = new XmlDocument();
+            xml.Load(filepath);
+
+            XmlNodeList szervek = xml.GetElementsByTagName("szervezeti_egyseg");
+
+            szervek_atalakitva = new List<string[]>();
+
+            for (int i = 0; i < szervek.Count; i++)
+            {
+                foreach (XmlNode node in szervek[i].ChildNodes)
+                {
+                    switch (node.Name)
+                    {
+                        case "neve": { szerv_neve = node.InnerText; break; }
+                        case "sablon": { szerv_sablon = node.InnerText; break; }
+                        case "mkidoKezd": { szerv_mkidoKezd = node.InnerText; break; }
+                        case "mkidoVege": { szerv_mkidoVege = node.InnerText; break; }
+                        case "mkSzunetek": { szerv_mkSzunetek = node.ChildNodes; break; }
+                        case "napimkIdo": { szerv_napimkIdo = int.Parse(node.InnerText); break; }
+                        case "mkSzunetNemResze": 
+                            {
+                                switch (node.Attributes.GetNamedItem("ertek").InnerText)
+                                {
+                                    case "igaz":
+                                        {
+                                            szerv_mkSzunetNemResze = true;
+                                            break;
+                                        }
+                                    case "hamis":
+                                        {
+                                            szerv_mkSzunetNemResze = false;
+                                            break;
+                                        }
+                                }
+                                break;
+                            }
+                        case "autoNyilvantartas": 
+                            {
+                                switch (node.Attributes.GetNamedItem("ertek").InnerText)
+                                {
+                                    case "igaz":
+                                        {
+                                            szerv_autoNyilvantartas = true;
+                                            break;
+                                        }
+                                    case "hamis":
+                                        {
+                                            szerv_autoNyilvantartas = false;
+                                            break;
+                                        }
+                                }
+                                break;
+                            }
+                    }
+                }
+                
+                foreach(XmlNode node in szerv_mkSzunetek)
+                {
+                    string kezdes = node.Attributes.GetNamedItem("kezdes").InnerText;
+                    string veg = node.Attributes.GetNamedItem("veg").InnerText;
+                    string perc = node.Attributes.GetNamedItem("perc").InnerText;
+
+                    szervek_atalakitva.Add(new string[] { kezdes, veg, perc });
+                }
+
+                SzervezetiEgysegek.Add(new SzervezetiEgyseg()
+                {
+                    Neve = szerv_neve,
+                    Sablon = szerv_sablon,
+                    MkidoKezd = szerv_mkidoKezd,
+                    MkidoVege = szerv_mkidoVege,
+                    MkSzunetek = szervek_atalakitva,
+                    NapimkIdo = szerv_napimkIdo,
+                    MkSzunetNemResze = szerv_mkSzunetNemResze,
+                    AutoNyilvantartas = szerv_autoNyilvantartas
+                });
+            }
         }
 
         #endregion

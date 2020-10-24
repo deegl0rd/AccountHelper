@@ -43,7 +43,7 @@ namespace AccountHelper.src.Nyilvantartas
                 ListViewItem item = new ListViewItem(c.ceg_neve)
                 {
                     UseItemStyleForSubItems = false,
-                    Tag = ReverseSlash(c.path)
+                    Tag = ReverseSlash(c.filepath)
                 };
                 item.SubItems.Add(c.fajlNev);
 

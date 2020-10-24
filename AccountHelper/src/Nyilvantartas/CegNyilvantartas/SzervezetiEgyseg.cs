@@ -14,6 +14,8 @@ namespace AccountHelper.src.Nyilvantartas
     {
         #region Variables
 
+        public static string xmlTagNeve = "szervezeti_egyseg";
+
         //readonly static string work_Folder = Application.StartupPath + "/" + Program.cegek;
 
         public string Neve { get; set; }
@@ -29,10 +31,9 @@ namespace AccountHelper.src.Nyilvantartas
 
         #region Létrehozás metódus
 
-        public void Hozzaad(Ceg ceg)
+        public void Letrehoz(Ceg ceg)
         {
-            Console.WriteLine(ceg.path);
-            XDocument cegX = XDocument.Load(ceg.path);
+            XDocument cegX = XDocument.Load(ceg.filepath);
 
             List<XElement> elem = new List<XElement>();
 
@@ -48,8 +49,8 @@ namespace AccountHelper.src.Nyilvantartas
 
             //xml nyit
             cegX.Root.Add(
-                new XElement("szervezeti_egyseg",
-                    new XAttribute("nev", Neve),
+                new XElement(xmlTagNeve,
+                    new XAttribute("neve", Neve),
                     new XElement("sablon", Sablon),
                     new XElement("mkidoKezd", MkidoKezd),
                     new XElement("mkidoVege", MkidoVege),
@@ -63,9 +64,26 @@ namespace AccountHelper.src.Nyilvantartas
             );
 
             //xml zár
-            cegX.Save(ceg.path);
+            cegX.Save(ceg.filepath);
 
             Console.WriteLine("szervezeti egyseg created");
+        }
+
+        #endregion
+
+        #region Törlés metódus
+
+        public static void Torles(Ceg ceg, string neve)
+        {
+            XDocument cegX = XDocument.Load(ceg.filepath);
+
+            IEnumerable<XElement> nodes = from node in cegX.Descendants()
+                    let attr = node.Attribute("neve")
+                    where node.Name == xmlTagNeve && attr.Value == neve
+                    select node;
+
+            nodes.Remove();
+            cegX.Save(ceg.filepath);
         }
 
         #endregion

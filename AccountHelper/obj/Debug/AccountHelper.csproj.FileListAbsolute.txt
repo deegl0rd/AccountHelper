@@ -11,13 +11,10 @@ E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Renci.SshNet.dll
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Buffers.dll
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Memory.dll
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Ubiety.Dns.Core.dll
-E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Zstandard.Net.dll
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Google.Protobuf.xml
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.xml
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\K4os.Compression.LZ4.Streams.xml
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\K4os.Hash.xxHash.xml
-E:\REPOS\AccountHelper\AccountHelper\bin\Debug\MySql.Data.xml
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\Renci.SshNet.xml
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Buffers.xml
 E:\REPOS\AccountHelper\AccountHelper\bin\Debug\System.Memory.xml
@@ -41,3 +38,7 @@ E:\REPOS\AccountHelper\AccountHelper\bin\Debug\ObjectListView.xml
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Beallitasok.BeallitasokAblak.resources
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.CegSzerkesztesAblak.resources
 E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.src.Nyilvantartas.SzervezetiEgysegSzerkesztesAblak.resources
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\AccountHelper.exe.manifest
+E:\REPOS\AccountHelper\AccountHelper\bin\Debug\AccountHelper.application
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.exe.manifest
+E:\REPOS\AccountHelper\AccountHelper\obj\Debug\AccountHelper.application
