@@ -13,7 +13,6 @@ namespace AccountHelper.src.XKROlvaso
     {
         #region Munkamezők
 
-        const string work_Folder_name = "temp";
         string work_Folder;
         XmlKezelo xml;
         ExcelKezelo exc;
@@ -149,8 +148,9 @@ namespace AccountHelper.src.XKROlvaso
         private void KezeloAblak_Load(object sender, EventArgs e)
         {
             nevjegy = new NevjegyPanel();
-            work_Folder = Application.StartupPath + "/" + work_Folder_name;
+            work_Folder = Application.StartupPath + "/" + Program.temp;
             kimenetiHely.Text = Settings.Default["OutputFolder"].ToString();
+            MappaTartalomTorol(work_Folder);
 
             Lista.Columns[0].Width = (int)Settings.Default["oszlop0"];
             Lista.Columns[1].Width = (int)Settings.Default["oszlop1"];

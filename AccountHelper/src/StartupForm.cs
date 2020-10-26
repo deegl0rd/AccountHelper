@@ -45,7 +45,7 @@ namespace AccountHelper.src
         {
             Ceg.Betoltes();
             IdoSav.Text = DateTime.Now.ToString();
-            CegekSav.Text = Ceg.lista.Count.ToString() + " db cég betöltve";
+            CegekSav.Text = Ceg.ceglista.Count.ToString() + " db cég betöltve";
             VerzioszamSav.Text = "Verzió: " +  Application.ProductVersion;
             VerzioszamSav.Alignment = ToolStripItemAlignment.Right;
         }

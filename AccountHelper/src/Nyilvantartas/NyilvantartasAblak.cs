@@ -15,6 +15,7 @@ namespace AccountHelper.src.Nyilvantartas
     {
         public static NyilvantartasAblak formInstance;
 
+        private Ceg kattintottCeg;
         public NyilvantartasAblak()
         {
             InitializeComponent();
@@ -26,21 +27,41 @@ namespace AccountHelper.src.Nyilvantartas
             return input.Replace("\\", "/");
         }
 
-        private void MegseGomb_Click(object sender, EventArgs e)
+        private void SzervEgysegListabaToltese()
         {
-            Hide();
+            ListViewItem szvItem;
+            for (int i = 0; i < kattintottCeg.SzervezetiEgysegek.Count; i++)
+            {
+                szvItem = new ListViewItem(kattintottCeg.SzervezetiEgysegek[i].Neve)
+                {
+                    UseItemStyleForSubItems = false,
+                    Tag = kattintottCeg.SzervezetiEgysegek[i].ID
+                };
+                szvItem.SubItems.Add(kattintottCeg.SzervezetiEgysegek[i].Sablon);
+                szvItem.SubItems[1].ForeColor = Color.Gray;
+
+                szervezetiEgysegLista.Items.Add(szvItem);
+            }
         }
 
-        public void Frissites()
+        public void Frissites(bool teljesen)
         {
+            if (!teljesen)
+            {
+                tartalomDoboz.Text = File.ReadAllText(kattintottCeg.filepath);
+                return;
+            }
+
             tartalomDoboz.Text = "";
             cegLista.Items.Clear();
             szervezetiEgysegLista.Items.Clear();
 
             Ceg.Betoltes();
-            foreach (Ceg c in Ceg.lista)
+
+            ListViewItem item;
+            foreach (Ceg c in Ceg.ceglista)
             {
-                ListViewItem item = new ListViewItem(c.ceg_neve)
+                item = new ListViewItem(c.ceg_neve)
                 {
                     UseItemStyleForSubItems = false,
                     Tag = ReverseSlash(c.filepath)
@@ -53,10 +74,10 @@ namespace AccountHelper.src.Nyilvantartas
 
         private void NyilvantartasAblak_Load(object sender, EventArgs e)
         {
-            Frissites();
+            Frissites(true);
         }
 
-        private void TorlesGomb_Click(object sender, EventArgs e)
+        private void CegTorlesGomb_Click(object sender, EventArgs e)
         {
             if (cegLista.SelectedItems.Count == 0) return;
 
@@ -65,12 +86,12 @@ namespace AccountHelper.src.Nyilvantartas
                 File.Delete(item.Tag.ToString());
                 item.Remove();
             }
-            Frissites();
+            Frissites(true);
         }
 
         private void FrissitesGomb_Click(object sender, EventArgs e)
         {
-            Frissites();
+            Frissites(true);
         }
 
         private void HozzaadasGomb_Click(object sender, EventArgs e)
@@ -84,28 +105,37 @@ namespace AccountHelper.src.Nyilvantartas
             if (cegLista.SelectedItems.Count > 1 || cegLista.SelectedItems.Count == 0) return;
 
             CegSzerkesztesAblak.code = true;
-            foreach (ListViewItem item in cegLista.SelectedItems)
-            {
-                CegSzerkesztesAblak.szerkesztett = item.Tag.ToString();
-            }
             Program.CegSzerkesztesAblak.ShowDialog();
         }
 
         private void CegLista_MouseClick(object sender, MouseEventArgs e)
         {
+            szervezetiEgysegLista.Items.Clear();
             if (!cegLista.FocusedItem.Bounds.Contains(e.Location)) return;
+            if (cegLista.SelectedItems.Count > 1 || cegLista.SelectedItems.Count == 0) return;
 
-            tartalomDoboz.Text = File.ReadAllText(cegLista.FocusedItem.Tag.ToString());
+            kattintottCeg = new Ceg(cegLista.FocusedItem.Tag.ToString());
+            kattintottCeg.SzervezetiEgysegBetoltes();
+            tartalomDoboz.Text = File.ReadAllText(kattintottCeg.filepath);
 
+            CegSzerkesztesAblak.szerkesztettCegUtvonala = kattintottCeg.filepath;
 
+            SzervEgysegListabaToltese();
         }
 
-        private void Szerv_torlesGomb_Click(object sender, EventArgs e)
+        private void Szerv_TorlesGomb_Click(object sender, EventArgs e)
         {
+            if (szervezetiEgysegLista.SelectedItems.Count == 0) return;
 
+            foreach (ListViewItem item in szervezetiEgysegLista.SelectedItems)
+            {
+                SzervezetiEgyseg.Torles(kattintottCeg, item.Text, item.Tag.ToString());
+                item.Remove();
+            }
+            Frissites(false);
         }
 
-        private void Szerv_hozzadasGomb_Click(object sender, EventArgs e)
+        private void Szerv_HozzadasGomb_Click(object sender, EventArgs e)
         {
             if (cegLista.SelectedItems.Count > 1 || cegLista.SelectedItems.Count == 0) return;
 

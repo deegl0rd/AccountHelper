@@ -18,7 +18,7 @@ namespace AccountHelper.src.Nyilvantartas
 
         public List<SzervezetiEgyseg> SzervezetiEgysegek { get; set; }
 
-        public static List<Ceg> lista;
+        public static List<Ceg> ceglista;
 
         private static XmlDocument xml;
 
@@ -35,11 +35,9 @@ namespace AccountHelper.src.Nyilvantartas
 
         #region Szervezeti egység betöltési változók
 
-        string szerv_neve, szerv_sablon, szerv_mkidoKezd, szerv_mkidoVege;
+        string szerv_neve, szerv_ID, szerv_sablon, szerv_mkidoKezd, szerv_mkidoVege;
 
         XmlNodeList szerv_mkSzunetek;
-
-        List<string[]> szervek_atalakitva;
 
         int szerv_napimkIdo;
 
@@ -72,15 +70,6 @@ namespace AccountHelper.src.Nyilvantartas
             cegAdoszam = xml.GetElementsByTagName("cegAdoszam").Item(0).InnerText;
             cegTelefonszam = xml.GetElementsByTagName("cegTelefonszam").Item(0).InnerText;
             cegWeboldal = xml.GetElementsByTagName("cegWeboldal").Item(0).InnerText;
-        }
-
-        #endregion
-
-        #region Szervezeti egységek betöltése
-
-        public void SzervezetiEgysegekBetoltese()
-        {
-
         }
 
         #endregion
@@ -155,9 +144,6 @@ namespace AccountHelper.src.Nyilvantartas
             xml = new XmlDocument();
             xml.LoadXml(xmlContent);
 
-            if (SzervezetiEgysegek == null) SzervezetiEgysegek = new List<SzervezetiEgyseg>();
-
-            SzervezetiEgysegBetoltes();
             Parser(xml);
         }
 
@@ -177,9 +163,6 @@ namespace AccountHelper.src.Nyilvantartas
             xml = new XmlDocument();
             xml.LoadXml(xmlContent);
 
-            if (SzervezetiEgysegek == null) SzervezetiEgysegek = new List<SzervezetiEgyseg>();
-
-            SzervezetiEgysegBetoltes();
             Parser(xml);
         }
 
@@ -319,39 +302,41 @@ namespace AccountHelper.src.Nyilvantartas
         {
             string[] files = Directory.GetFiles(work_Folder);
 
-            lista = new List<Ceg>();
-            lista.Clear();
+            ceglista = new List<Ceg>();
+            ceglista.Clear();
 
             foreach (string file in files)
             {
-                lista.Add(new Ceg(work_Folder, Path.GetFileName(file)));
+                Ceg c = new Ceg(work_Folder, Path.GetFileName(file));
+                ceglista.Add(c);
             }
 
-            return lista;
+            return ceglista;
         }
 
         #endregion
 
         #region Szervezeti egység Betöltése
 
-        private void SzervezetiEgysegBetoltes()
+        public List<SzervezetiEgyseg> SzervezetiEgysegBetoltes()
         {
-            if (SzervezetiEgysegek == null) SzervezetiEgysegek = new List<SzervezetiEgyseg>();
+            SzervezetiEgysegek = new List<SzervezetiEgyseg>();
 
             XmlDocument xml = new XmlDocument();
             xml.Load(filepath);
 
             XmlNodeList szervek = xml.GetElementsByTagName("szervezeti_egyseg");
 
-            szervek_atalakitva = new List<string[]>();
+            List<string[]> szervek_atalakitva = new List<string[]>();
 
             for (int i = 0; i < szervek.Count; i++)
             {
+                szerv_neve = szervek[i].Attributes.GetNamedItem("neve").InnerText;
+                szerv_ID = szervek[i].Attributes.GetNamedItem("id").InnerText;
                 foreach (XmlNode node in szervek[i].ChildNodes)
                 {
                     switch (node.Name)
                     {
-                        case "neve": { szerv_neve = node.InnerText; break; }
                         case "sablon": { szerv_sablon = node.InnerText; break; }
                         case "mkidoKezd": { szerv_mkidoKezd = node.InnerText; break; }
                         case "mkidoVege": { szerv_mkidoVege = node.InnerText; break; }
@@ -406,6 +391,7 @@ namespace AccountHelper.src.Nyilvantartas
                 SzervezetiEgysegek.Add(new SzervezetiEgyseg()
                 {
                     Neve = szerv_neve,
+                    ID = szerv_ID,
                     Sablon = szerv_sablon,
                     MkidoKezd = szerv_mkidoKezd,
                     MkidoVege = szerv_mkidoVege,
@@ -415,6 +401,8 @@ namespace AccountHelper.src.Nyilvantartas
                     AutoNyilvantartas = szerv_autoNyilvantartas
                 });
             }
+
+            return SzervezetiEgysegek;
         }
 
         #endregion

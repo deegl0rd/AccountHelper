@@ -42,7 +42,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -142,7 +142,6 @@
     <Compile Include="src\Beallitasok\BeallitasokAblak.Designer.cs">
       <DependentUpon>BeallitasokAblak.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\UNUSED\Logger.cs" />
     <Compile Include="src\Nyilvantartas\Alkalmazott\Alkalmazott.cs" />
     <Compile Include="src\Nyilvantartas\CegNyilvantartas\Ceg.cs" />
     <Compile Include="src\Nyilvantartas\CegNyilvantartas\SzervezetiEgyseg.cs" />
@@ -322,7 +321,9 @@
     <None Include="Resources\icon_delete_alt.png" />
     <None Include="Resources\accounthelper.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\MunkaidoModul\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

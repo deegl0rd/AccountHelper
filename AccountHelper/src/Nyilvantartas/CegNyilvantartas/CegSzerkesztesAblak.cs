@@ -18,7 +18,7 @@ namespace AccountHelper.src.Nyilvantartas
 
         private static Ceg letrehozottCeg, megnyitottCeg;
 
-        public static string szerkesztett;
+        public static string szerkesztettCegUtvonala;
 
         private bool HaUres()
         {
@@ -81,7 +81,7 @@ namespace AccountHelper.src.Nyilvantartas
                     {
                         Text = cegSzerkesztoAblakSzoveg.Text = "Cég adatainak szerkesztése";
 
-                        megnyitottCeg = new Ceg(szerkesztett);
+                        megnyitottCeg = new Ceg(szerkesztettCegUtvonala);
 
                         //Cég neve
                         cegNeve_Doboz.Text = megnyitottCeg.ceg_neve;
@@ -153,7 +153,7 @@ namespace AccountHelper.src.Nyilvantartas
             letrehozottCeg.Letrehoz();
 
             Hide();
-            NyilvantartasAblak.formInstance.Frissites();
+            NyilvantartasAblak.formInstance.Frissites(true);
         }
 
         private void Valtoztat()
@@ -176,7 +176,7 @@ namespace AccountHelper.src.Nyilvantartas
                 );
 
             Hide();
-            NyilvantartasAblak.formInstance.Frissites();
+            NyilvantartasAblak.formInstance.Frissites(false);
         }
 
         private void MegseGomb_Click(object sender, EventArgs e)

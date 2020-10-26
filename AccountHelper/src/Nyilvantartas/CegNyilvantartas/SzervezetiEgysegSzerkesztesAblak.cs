@@ -28,6 +28,10 @@ namespace AccountHelper.src.Nyilvantartas
                 string.IsNullOrEmpty(mkVege_ora_SzamValaszto.Text) ||
                 string.IsNullOrEmpty(mkVege_perc_SzamValaszto.Text))
             {
+                if (munkaRendSablon_valaszto.SelectedItem.ToString() == "kötetlen")
+                {
+                    return false;
+                }
                 MessageBox.Show(null, "Fontos mező ki lett hagyva!", "Hiányzó mezők", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
@@ -41,7 +45,7 @@ namespace AccountHelper.src.Nyilvantartas
             letrehozott = new SzervezetiEgyseg
             {
                 Neve = cegNeve_Doboz.Text,
-                Sablon = munkaRendSablon_valaszto.SelectedText,
+                Sablon = munkaRendSablon_valaszto.SelectedItem.ToString(),
                 MkidoKezd = mkKezdete_ora_SzamValaszto.Text + ":" + mkKezdete_perc_SzamValaszto.Text,
                 MkidoVege = mkVege_ora_SzamValaszto.Text + ":" + mkVege_perc_SzamValaszto.Text,
                 NapimkIdo = (int)napiMunkaIdo_SzamValaszto.Value,
@@ -63,7 +67,7 @@ namespace AccountHelper.src.Nyilvantartas
             letrehozott.Letrehoz(ceg);
 
             Hide();
-            NyilvantartasAblak.formInstance.Frissites();
+            NyilvantartasAblak.formInstance.Frissites(true);
         }
 
         public SzervezetiEgysegSzerkesztesAblak()
@@ -114,6 +118,28 @@ namespace AccountHelper.src.Nyilvantartas
                     {
                         Text = szervezetiEgysegSzerkesztesAblakSzoveg.Text = "Szervezeti egység módosítása";
 
+                        break;
+                    }
+            }
+        }
+
+        private void MunkaRendSablon_valaszto_SelectedValueChanged(object sender, EventArgs e)
+        {
+            switch (munkaRendSablon_valaszto.SelectedItem.ToString())
+            {
+                case "általános":
+                    {
+                        kotelezoElemek.Visible = true;
+                        break;
+                    }
+                case "kötetlen":
+                    {
+                        kotelezoElemek.Visible = false;
+                        break;
+                    }
+                case "munkaidőkeret":
+                    {
+                        kotelezoElemek.Visible = true;
                         break;
                     }
             }

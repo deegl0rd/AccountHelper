@@ -17,4 +17,13 @@
     <cegTelefonszam>+36707719804</cegTelefonszam>
     <cegWeboldal>www.platformers.hu</cegWeboldal>
   </cegadatok>
+  <szervezeti_egyseg neve="Bár" id="E14230">
+    <sablon>általános</sablon>
+    <mkidoKezd>14:00</mkidoKezd>
+    <mkidoVege>22:00</mkidoVege>
+    <mkSzunetek />
+    <napimkIdo>8</napimkIdo>
+    <mkSzunetNemResze ertek="hamis" />
+    <autoNyilvantartas ertek="hamis" />
+  </szervezeti_egyseg>
 </ceg>
