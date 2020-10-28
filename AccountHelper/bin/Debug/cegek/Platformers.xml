@@ -17,13 +17,26 @@
     <cegTelefonszam>+36707719804</cegTelefonszam>
     <cegWeboldal>www.platformers.hu</cegWeboldal>
   </cegadatok>
-  <szervezeti_egyseg neve="Bár" id="E14230">
+  <szervezeti_egyseg neve="Iroda 1" id="A15987">
     <sablon>általános</sablon>
-    <mkidoKezd>14:00</mkidoKezd>
-    <mkidoVege>22:00</mkidoVege>
-    <mkSzunetek />
+    <mkidoKezd>14:30</mkidoKezd>
+    <mkidoVege>22:30</mkidoVege>
+    <mkSzunetek>
+      <mkSzunet0 kezdes="17" veg="18" perc="30" />
+    </mkSzunetek>
+    <napimkIdo>8</napimkIdo>
+    <mkSzunetNemResze ertek="igaz" />
+    <autoNyilvantartas ertek="igaz" />
+  </szervezeti_egyseg>
+  <szervezeti_egyseg neve="Karbantarto" id="C83727">
+    <sablon>általános</sablon>
+    <mkidoKezd>22:00</mkidoKezd>
+    <mkidoVege>02:00</mkidoVege>
+    <mkSzunetek>
+      <mkSzunet0 kezdes="00" veg="01" perc="30" />
+    </mkSzunetek>
     <napimkIdo>8</napimkIdo>
     <mkSzunetNemResze ertek="hamis" />
-    <autoNyilvantartas ertek="hamis" />
+    <autoNyilvantartas ertek="igaz" />
   </szervezeti_egyseg>
 </ceg>

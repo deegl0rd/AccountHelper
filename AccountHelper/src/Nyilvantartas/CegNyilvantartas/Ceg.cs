@@ -37,9 +37,9 @@ namespace AccountHelper.src.Nyilvantartas
 
         string szerv_neve, szerv_ID, szerv_sablon, szerv_mkidoKezd, szerv_mkidoVege;
 
-        XmlNodeList szerv_mkSzunetek;
+        int szerv_napimkIdo, szerv_szunetekSzama;
 
-        int szerv_napimkIdo;
+        List<string[]> szerv_atalakitva;
 
         bool szerv_mkSzunetNemResze, szerv_autoNyilvantartas;
 
@@ -325,22 +325,35 @@ namespace AccountHelper.src.Nyilvantartas
             XmlDocument xml = new XmlDocument();
             xml.Load(filepath);
 
-            XmlNodeList szervek = xml.GetElementsByTagName("szervezeti_egyseg");
+            XmlNodeList szervezetiEgysegLista = xml.GetElementsByTagName("szervezeti_egyseg");
 
-            List<string[]> szervek_atalakitva = new List<string[]>();
-
-            for (int i = 0; i < szervek.Count; i++)
+            for (int i = 0; i < szervezetiEgysegLista.Count; i++)
             {
-                szerv_neve = szervek[i].Attributes.GetNamedItem("neve").InnerText;
-                szerv_ID = szervek[i].Attributes.GetNamedItem("id").InnerText;
-                foreach (XmlNode node in szervek[i].ChildNodes)
+                szerv_neve = szervezetiEgysegLista[i].Attributes.GetNamedItem("neve").InnerText;
+                szerv_ID = szervezetiEgysegLista[i].Attributes.GetNamedItem("id").InnerText;
+                szerv_szunetekSzama = 0;
+                szerv_atalakitva = new List<string[]>();
+
+                foreach (XmlNode node in szervezetiEgysegLista[i].ChildNodes)
                 {
                     switch (node.Name)
                     {
                         case "sablon": { szerv_sablon = node.InnerText; break; }
                         case "mkidoKezd": { szerv_mkidoKezd = node.InnerText; break; }
                         case "mkidoVege": { szerv_mkidoVege = node.InnerText; break; }
-                        case "mkSzunetek": { szerv_mkSzunetek = node.ChildNodes; break; }
+                        case "mkSzunetek": 
+                            {
+                                for(int j = 0; j < node.ChildNodes.Count; j++)
+                                {
+                                    string kezdes = node.ChildNodes[j].Attributes.GetNamedItem("kezdes").InnerText;
+                                    string veg = node.ChildNodes[j].Attributes.GetNamedItem("veg").InnerText;
+                                    string perc = node.ChildNodes[j].Attributes.GetNamedItem("perc").InnerText;
+
+                                    szerv_atalakitva.Add(new string[] { kezdes, veg, perc });
+                                    szerv_szunetekSzama = szerv_atalakitva.Count;
+                                }
+                                break;
+                            }
                         case "napimkIdo": { szerv_napimkIdo = int.Parse(node.InnerText); break; }
                         case "mkSzunetNemResze": 
                             {
@@ -378,15 +391,6 @@ namespace AccountHelper.src.Nyilvantartas
                             }
                     }
                 }
-                
-                foreach(XmlNode node in szerv_mkSzunetek)
-                {
-                    string kezdes = node.Attributes.GetNamedItem("kezdes").InnerText;
-                    string veg = node.Attributes.GetNamedItem("veg").InnerText;
-                    string perc = node.Attributes.GetNamedItem("perc").InnerText;
-
-                    szervek_atalakitva.Add(new string[] { kezdes, veg, perc });
-                }
 
                 SzervezetiEgysegek.Add(new SzervezetiEgyseg()
                 {
@@ -395,7 +399,8 @@ namespace AccountHelper.src.Nyilvantartas
                     Sablon = szerv_sablon,
                     MkidoKezd = szerv_mkidoKezd,
                     MkidoVege = szerv_mkidoVege,
-                    MkSzunetek = szervek_atalakitva,
+                    MkSzunetek = szerv_atalakitva,
+                    SzunetekSzama = szerv_szunetekSzama,
                     NapimkIdo = szerv_napimkIdo,
                     MkSzunetNemResze = szerv_mkSzunetNemResze,
                     AutoNyilvantartas = szerv_autoNyilvantartas

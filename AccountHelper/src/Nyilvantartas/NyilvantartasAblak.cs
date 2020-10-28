@@ -16,6 +16,7 @@ namespace AccountHelper.src.Nyilvantartas
         public static NyilvantartasAblak formInstance;
 
         private Ceg kattintottCeg;
+
         public NyilvantartasAblak()
         {
             InitializeComponent();
@@ -140,11 +141,27 @@ namespace AccountHelper.src.Nyilvantartas
             if (cegLista.SelectedItems.Count > 1 || cegLista.SelectedItems.Count == 0) return;
 
             SzervezetiEgysegSzerkesztesAblak.code = false;
-            foreach (ListViewItem item in cegLista.SelectedItems)
-            {
-                SzervezetiEgysegSzerkesztesAblak.kivalasztottCegUtvonala = item.Tag.ToString();
-            }
+            SzervezetiEgysegSzerkesztesAblak.kivalasztottCegUtvonala = cegLista.FocusedItem.Tag.ToString();
 
+            Program.SzervezetiEgysegSzerkesztesAblak.ShowDialog();
+        }
+
+        private void SzervezetiEgysegLista_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (!szervezetiEgysegLista.FocusedItem.Bounds.Contains(e.Location)) return;
+            if (szervezetiEgysegLista.SelectedItems.Count > 1 || szervezetiEgysegLista.SelectedItems.Count == 0) return;
+
+
+            SzervezetiEgysegSzerkesztesAblak.szerv_nev = szervezetiEgysegLista.FocusedItem.Text;
+            SzervezetiEgysegSzerkesztesAblak.szerv_ID = szervezetiEgysegLista.FocusedItem.Tag.ToString();
+            SzervezetiEgysegSzerkesztesAblak.kivalasztottCegUtvonala = cegLista.FocusedItem.Tag.ToString();
+        }
+
+        private void Szerv_SzerkesztesGomb_Click(object sender, EventArgs e)
+        {
+            if (szervezetiEgysegLista.SelectedItems.Count > 1 || szervezetiEgysegLista.SelectedItems.Count == 0) return;
+
+            SzervezetiEgysegSzerkesztesAblak.code = true;
             Program.SzervezetiEgysegSzerkesztesAblak.ShowDialog();
         }
     }

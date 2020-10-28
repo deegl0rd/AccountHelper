@@ -25,7 +25,7 @@ namespace AccountHelper.src
         public static Form BeallitasokAblak = new BeallitasokAblak();
         public static Form SzervezetiEgysegSzerkesztesAblak = new SzervezetiEgysegSzerkesztesAblak();
 
-        #endregion
+        #endregion 
 
         #region Fájl/mappa nevek
 

@@ -25,6 +25,8 @@ namespace AccountHelper.src.Nyilvantartas
         public string MkidoKezd { get; set; }
         public string MkidoVege { get; set; }
         public List<string[]> MkSzunetek { get; set; }
+
+        public int SzunetekSzama { get; internal set; }
         public int NapimkIdo { get; set; }
         public bool MkSzunetNemResze { get; set; }
         public bool AutoNyilvantartas { get; set; }
@@ -114,6 +116,56 @@ namespace AccountHelper.src.Nyilvantartas
             cegX.Save(ceg.filepath);
 
             Console.WriteLine("szervezeti egyseg created");
+        }
+
+        #endregion
+
+        #region Változtatás metódus
+
+        public static void Valtoztat(Ceg ceg, string nev, string ID, SzervezetiEgyseg ujSzerv)
+        {
+            List<XElement> elem = new List<XElement>();
+
+            XmlDocument xml = new XmlDocument();
+            xml.LoadXml(File.ReadAllText(ceg.filepath));
+            XmlNode node = xml.SelectNodes($"//{xmlTagNeve}[@neve='{nev}' and @id='{ID}']")[0];
+
+            for (int i = 0; i < ujSzerv.MkSzunetek.Count; i++)
+            {
+                if (ujSzerv.MkSzunetek.ElementAt(i) == null) return;
+
+                elem.Add(new XElement("mkSzunet" + i,
+                    new XAttribute("kezdes", (ujSzerv.MkSzunetek[i])[0]),
+                    new XAttribute("veg", (ujSzerv.MkSzunetek[i])[1]),
+                    new XAttribute("perc", (ujSzerv.MkSzunetek[i])[2])));
+            }
+
+
+            node.Attributes.GetNamedItem("neve").InnerText = ujSzerv.Neve;
+            foreach (XmlNode child in node.ChildNodes)
+            {
+                switch (child.Name)
+                {
+                    case "sablon": { child.InnerText = ujSzerv.Sablon; break; }
+                    case "mkidoKezd": { child.InnerText = ujSzerv.MkidoKezd; break; }
+                    case "mkidoVege": { child.InnerText = ujSzerv.MkidoVege; break; }
+                    case "mkSzunetek": 
+                        {
+                            child.InnerText = "";
+                            for (int i = 0; i < elem.Count; i++)
+                            {
+                                child.InnerXml += elem[i].ToString();
+                            }
+                            break; 
+                        }
+                    case "napimkIdo": { child.InnerText = ujSzerv.NapimkIdo.ToString(); break; }
+                    case "mkSzunetNemResze": { child.Attributes.GetNamedItem("ertek").InnerText = ujSzerv.MkSzunetNemResze ? "igaz" : "hamis"; break; }
+                    case "autoNyilvantartas": { child.Attributes.GetNamedItem("ertek").InnerText = ujSzerv.AutoNyilvantartas ? "igaz" : "hamis"; break; }
+                }
+            }
+
+            //xml ment
+            xml.Save(ceg.filepath);
         }
 
         #endregion
